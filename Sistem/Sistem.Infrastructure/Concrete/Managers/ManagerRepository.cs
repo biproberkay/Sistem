@@ -21,7 +21,7 @@ namespace Sistem.Infrastructure.Concrete.Managers
 
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            return _da.GetById(id);
         }
     }
 }

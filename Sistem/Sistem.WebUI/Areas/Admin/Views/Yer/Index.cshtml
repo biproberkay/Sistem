@@ -13,6 +13,7 @@
         <th>Level</th>
         <th>Title</th>
         <th>Parent</th>
+        <th></th>
     </tr>
     @foreach (var yer in Model.Yers)
     {
@@ -21,6 +22,11 @@
             <td>@yer.Level</td>
             <td>@yer.Title</td>
             <td>@yer.ParentId</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { id = yer.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
         </tr>
 
     }

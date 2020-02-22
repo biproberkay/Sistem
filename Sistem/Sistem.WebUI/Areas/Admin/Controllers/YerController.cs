@@ -26,5 +26,18 @@ namespace Sistem.WebUI.Areas.Admin.Controllers
             };
             return View(model);
         }
+
+        public IActionResult Details(int? id)
+        {
+            Yer yer = _yerService.GetById((int)id);
+            var model = new YerViewModel()
+            {
+                Id = yer.Id,
+                Level = yer.Level,
+                Title = yer.Title,
+                ParentId = yer.ParentId
+            };
+            return View(model);
+        }
     }
 }
