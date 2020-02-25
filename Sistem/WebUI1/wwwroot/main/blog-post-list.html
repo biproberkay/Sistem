@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
     <link rel="stylesheet" href="assets/css/smoothproducts.css">
 </head>
 
@@ -33,49 +34,78 @@
     <main class="page blog-post-list">
         <section class="clean-block clean-blog-list dark">
             <div class="container">
-                <div class="block-heading">
-                    <h2 class="text-info">Blog Post List</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                <div class="row">
+                    <div class="col">
+                        <div class="block-heading">
+                            <h2 class="text-info">Blog Post List</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="block-content">
-                    <div class="clean-blog-post">
-                        <div class="row">
-                            <div class="col-lg-5"><img class="rounded img-fluid" src="assets/img/tech/image4.jpg"></div>
-                            <div class="col-lg-7">
-                                <h3>Lorem Ipsum dolor sit amet</h3>
-                                <div class="info"><span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John Smith</a></span></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis
-                                    vitae leo.</p><a class="btn btn-outline-primary btn-sm" role="button" href="blog-post.html">Read More</a></div>
+                <div class="row">
+                    <div class="d-flex flex-column justify-content-start align-items-center col-md-4 d-flex block-content">
+                        <div class="sticky-top pt-5">
+                            <div class="pt-5"><a class="btn btn-outline-primary" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button">Bilgisayar Programcılığı</a>
+                                <div class="collapse" id="collapse-1">
+                                    <p>Collapse content.</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div><a class="btn btn-outline-primary" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button">Bilgisayar Programcılığı</a>
+                                <div class="collapse" id="collapse-2">
+                                    <p>Collapse content.</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div><a class="btn btn-outline-primary" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" href="#collapse-3" role="button">Bilgisayar Programcılığı</a>
+                                <div class="collapse" id="collapse-3">
+                                    <p>Collapse content.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="clean-blog-post">
-                        <div class="row">
-                            <div class="col-lg-5"><img class="rounded img-fluid" src="assets/img/tech/image4.jpg"></div>
-                            <div class="col-lg-7">
-                                <h3>Lorem Ipsum dolor sit amet</h3>
-                                <div class="info"><span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John Smith</a></span></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis
-                                    vitae leo.</p><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></div>
-                        </div>
-                    </div>
-                    <div class="clean-blog-post">
-                        <div class="row">
-                            <div class="col-lg-5"><img class="rounded img-fluid" src="assets/img/tech/image4.jpg"></div>
-                            <div class="col-lg-7">
-                                <h3>Lorem Ipsum dolor sit amet</h3>
-                                <div class="info"><span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John Smith</a></span></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis
-                                    vitae leo.</p><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></div>
-                        </div>
-                    </div>
-                    <div class="clean-blog-post">
-                        <div class="row">
-                            <div class="col-lg-5"><img class="rounded img-fluid" src="assets/img/tech/image4.jpg"></div>
-                            <div class="col-lg-7">
-                                <h3>Lorem Ipsum dolor sit amet</h3>
-                                <div class="info"><span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John Smith</a></span></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis
-                                    vitae leo.</p><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></div>
+                    <div class="col-md-8">
+                        <div class="block-content">
+                            <div class="clean-blog-post">
+                                <div class="row">
+                                    <div class="col-lg-5"><img class="rounded img-fluid" src="assets/img/tech/image4.jpg"></div>
+                                    <div class="col-lg-7">
+                                        <h3>Lorem Ipsum dolor sit amet</h3>
+                                        <div class="info"><span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John Smith</a></span></div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                                            mattis vitae leo.</p><a class="btn btn-outline-primary btn-sm" role="button" href="blog-post.html">Read More</a></div>
+                                </div>
+                            </div>
+                            <div class="clean-blog-post">
+                                <div class="row">
+                                    <div class="col-lg-5"><img class="rounded img-fluid" src="assets/img/tech/image4.jpg"></div>
+                                    <div class="col-lg-7">
+                                        <h3>Lorem Ipsum dolor sit amet</h3>
+                                        <div class="info"><span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John Smith</a></span></div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                                            mattis vitae leo.</p><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></div>
+                                </div>
+                            </div>
+                            <div class="clean-blog-post">
+                                <div class="row">
+                                    <div class="col-lg-5"><img class="rounded img-fluid" src="assets/img/tech/image4.jpg"></div>
+                                    <div class="col-lg-7">
+                                        <h3>Lorem Ipsum dolor sit amet</h3>
+                                        <div class="info"><span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John Smith</a></span></div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                                            mattis vitae leo.</p><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></div>
+                                </div>
+                            </div>
+                            <div class="clean-blog-post">
+                                <div class="row">
+                                    <div class="col-lg-5"><img class="rounded img-fluid" src="assets/img/tech/image4.jpg"></div>
+                                    <div class="col-lg-7">
+                                        <h3>Lorem Ipsum dolor sit amet</h3>
+                                        <div class="info"><span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John Smith</a></span></div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                                            mattis vitae leo.</p><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -128,6 +158,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/smoothproducts.min.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/navbar.js"></script>
 </body>
 
 </html>

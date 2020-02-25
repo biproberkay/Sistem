@@ -18,14 +18,6 @@ namespace Sistem.WebUI.Areas.Admin.Controllers
         {
             _yerService = yerService;
         }
-        public IActionResult Index()
-        {
-            var model = new YerListViewModel()
-            { 
-                Yers = _yerService.GetAll()
-            };
-            return View(model);
-        }
 
         public IActionResult Details(int? id)
         {

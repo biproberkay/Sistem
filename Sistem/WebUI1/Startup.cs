@@ -25,7 +25,10 @@ namespace WebUI1
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            DefaultFilesOptions options = new DefaultFilesOptions();
+            options.DefaultFileNames.Clear();
+            options.DefaultFileNames.Add("/main/index.html");
+            app.UseDefaultFiles(options);
             app.UseStaticFiles();
 
             app.UseRouting();

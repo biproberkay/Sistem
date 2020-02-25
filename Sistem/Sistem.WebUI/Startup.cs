@@ -31,6 +31,9 @@ namespace Sistem.WebUI
             services.AddScoped<IServiceRepository<Yer>, ManagerRepository<Yer>>();
             services.AddScoped<IDaRepository<Yer>, MemoryYerDa>();
 
+            services.AddScoped<IServiceRepository<Post>, ManagerRepository<Post>>();
+            services.AddScoped<IDaRepository<Post>, MemoryPostDa>();
+
             services.AddControllersWithViews();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
@@ -50,8 +53,6 @@ namespace Sistem.WebUI
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
-            app.UseRouting();
 
             app.UseAuthorization();
 
