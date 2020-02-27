@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -7,10 +8,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Sistem.Core.Abstract.DaInterfaces;
 using Sistem.Core.Abstract.ServiceInterfaces;
 using Sistem.Core.Entities;
+using Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa;
 using Sistem.Infrastructure.Concrete.DataAccess.MemoryDa;
 using Sistem.Infrastructure.Concrete.Managers;
 
@@ -29,10 +32,12 @@ namespace Sistem.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IServiceRepository<Yer>, ManagerRepository<Yer>>();
-            services.AddScoped<IDaRepository<Yer>, MemoryYerDa>();
+            //services.AddScoped<IDaRepository<Yer>, MemoryYerDa>();
+            services.AddScoped<IDaRepository<Yer>, EfCoreDaRepository<Yer>>();
 
             services.AddScoped<IServiceRepository<Post>, ManagerRepository<Post>>();
-            services.AddScoped<IDaRepository<Post>, MemoryPostDa>();
+            //services.AddScoped<IDaRepository<Post>, MemoryPostDa>();
+            services.AddScoped<IDaRepository<Post>, EfCoreDaRepository<Post>>();
 
             services.AddControllersWithViews();
             services.AddMvc(options => options.EnableEndpointRouting = false);
@@ -52,7 +57,19 @@ namespace Sistem.WebUI
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            // Serve my app-specific default file, if present.
+            DefaultFilesOptions options = new DefaultFilesOptions();
+            options.DefaultFileNames.Clear();
+            options.DefaultFileNames.Add("/MyStaticFiles/main/index.html");
+            app.UseDefaultFiles(options);
+            //app.UseStaticFiles();
+            app.UseStaticFiles();//for wwwroot
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles")),
+                RequestPath = "/StaticFiles"
+            });
 
             app.UseAuthorization();
 
