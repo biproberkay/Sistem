@@ -1,0 +1,43 @@
+﻿@model Yer
+@{
+    ViewData["Title"] = "DetatilsYer";
+    Layout = "~/Areas/Member/Views/Shared/_Layout.cshtml";
+}
+
+<h1>DetatilsYer</h1>
+
+<div>
+    <h4>Yer</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ParentId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Parent.ParentId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.YerChilds)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.YerChilds.Count)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-area="member" asp-controller="Details" asp-action="DetailsYerMore" asp-route-id="@Model.Id">More...</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

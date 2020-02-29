@@ -16,22 +16,22 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDa
                     Id=1, Title="Bilgisayar Programcılığı", 
                     Summary="Summary Summary Summary Summary Summary Summary Summary ",
                     Body = "Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> ",
-                    ArticleDateCreated=DateTime.Now, ArticleDateModified=DateTime.UtcNow,
+                    DateCreated=DateTime.Now, DateModified=DateTime.UtcNow,
                 },
                 new Post{Id=2, Title="Yazılım",
                     Summary="Summary Summary Summary Summary Summary Summary Summary ",
                     Body = "Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> ",
-                    ArticleDateCreated=DateTime.Now, ArticleDateModified=DateTime.UtcNow,
+                    DateCreated=DateTime.Now, DateModified=DateTime.UtcNow,
                 },
                 new Post{Id=3, Title="Donanım",
                     Summary="Summary Summary Summary Summary Summary Summary Summary ",
                     Body = "Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> ",
-                    ArticleDateCreated=DateTime.Now, ArticleDateModified=DateTime.UtcNow,
+                    DateCreated=DateTime.Now, DateModified=DateTime.UtcNow,
                 },
                 new Post{Id=4, Title="Grafik",
                     Summary="Summary Summary Summary Summary Summary Summary Summary ",
                     Body = "Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> ",
-                    ArticleDateCreated=DateTime.Now, ArticleDateModified=DateTime.UtcNow,
+                    DateCreated=DateTime.Now, DateModified=DateTime.UtcNow,
                 }
             };
             return postlar;
@@ -45,25 +45,25 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDa
                     Id=1, Title="Bilgisayar Programcılığı",
                     Summary="Summary Summary Summary Summary Summary Summary Summary ",
                     Body = "Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> ",
-                    ArticleDateCreated=DateTime.Now, ArticleDateModified=DateTime.UtcNow,
+                    DateCreated=DateTime.Now, DateModified=DateTime.UtcNow,
                     YerId=1
                 },
                 new Post{Id=2, Title="Yazılım",
                     Summary="Summary Summary Summary Summary Summary Summary Summary ",
                     Body = "Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> ",
-                    ArticleDateCreated=DateTime.Now, ArticleDateModified=DateTime.UtcNow,
+                    DateCreated=DateTime.Now, DateModified=DateTime.UtcNow,
                     YerId=1
                 },
                 new Post{Id=3, Title="Donanım",
                     Summary="Summary Summary Summary Summary Summary Summary Summary ",
                     Body = "Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> ",
-                    ArticleDateCreated=DateTime.Now, ArticleDateModified=DateTime.UtcNow,
+                    DateCreated=DateTime.Now, DateModified=DateTime.UtcNow,
                     YerId=1
                 },
                 new Post{Id=4, Title="Grafik",
                     Summary="Summary Summary Summary Summary Summary Summary Summary ",
                     Body = "Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> Body Body Body Body Body Body Body Body Body Body Body Body Body </br> ",
-                    ArticleDateCreated=DateTime.Now, ArticleDateModified=DateTime.UtcNow,
+                    DateCreated=DateTime.Now, DateModified=DateTime.UtcNow,
                     YerId=1
                 }
             };
