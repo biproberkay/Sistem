@@ -26,7 +26,8 @@ namespace Sistem.WebUI.Controllers
         {
             var model = new ListVM()
             {
-                Posts = _postService.GetAll()
+                Posts = _postService.GetAll(),
+                Yers = _yerService.GetAll()
             };
             return View(model);
         }

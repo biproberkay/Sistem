@@ -35,7 +35,9 @@
             @Html.DisplayFor(model => model.YerChilds.Count)
             @foreach (var item in Model.YerChilds)
             {
-                <small>@item.Title</small>
+                <small class="badge badge-counter"
+                       style="background: @String.Format("#{0:X6}", new Random((int)DateTime.Now.Ticks).Next(0x1000000));"
+                       >@item.Title</small>
             }
         </dd>
         <dt class="col-sm-2">
