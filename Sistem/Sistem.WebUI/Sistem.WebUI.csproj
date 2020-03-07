@@ -13,6 +13,13 @@
     <ProjectReference Include="..\Sistem.Infrastructure\Sistem.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Views\Home\" />
+    <Folder Include="Areas\Admin\Views\Yer\" />
+    <Folder Include="Areas\Manager\Views\Home\" />
+    <Folder Include="Areas\Member\Views\" />
+  </ItemGroup>
+
 
 
 </Project>
