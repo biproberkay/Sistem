@@ -1,20 +1,31 @@
-﻿using Sistem.Core.Abstract.DaInterfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Sistem.Core.Abstract.DaInterfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
 {
-    public class EfCoreDaRepository<T> : IDaRepository<T> where T : class
+    public class EfCoreDaRepository<T/*, TContext*/> : IDaRepository<T> 
+        where T : class
+        //where TContext : DbContext, new()
     {
-        public List<T> GetAll()
+        private EfCoreSistemContext _context;
+        public EfCoreDaRepository(EfCoreSistemContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public virtual List<T> GetAll()
+        {
+            var ts = _context.Set<T>().ToList();
+            return ts;
         }
 
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
-            throw new NotImplementedException();
+            var t = _context.Set<T>().Find(id);
+            return t;
         }
     }
 }

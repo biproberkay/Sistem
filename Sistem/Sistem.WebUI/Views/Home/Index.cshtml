@@ -1,11 +1,46 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+    <style>
+        a.card-link {
 
-    <div class="text-center">
-        <h1 class="display-4">Welcome you are in the sistem now.</h1>
-        <p>Learn about <a href="/admin/home/index">Admin</a>.</p>
-        <p>Learn about <a href="/manager/home/index">Manager</a>.</p>
-        <p>Learn about <a href="/member/home/index">Member</a>.</p>
-        <p>Learn about <a href="/guest/home/index">Guest</a>.</p>
+            background-color:#011c39d6;
+        }
+    </style>
+    <div class="card text-light">
+        <div class="card-img-overlay text-center">
+            <h1 class="card-header display-4">Welcome!<br /> You are in the sistem now.</h1>
+            <p class="card-text">Learn about <a class="card-link" href="/admin/home/index">Admin</a>.</p>
+            <p class="card-text">Learn about <a class="card-link" href="/manager/home/index">Manager</a>.</p>
+            <p class="card-text">Learn about <a class="card-link" href="/member/home/index">Member</a>.</p>
+            <p class="card-text">Learn about <a class="card-link" href="/guest/home/index">Guest</a>.</p>
+        </div>
+
+        <img class="card-img-top" src="~/StaticFiles\main\assets\img\scenery\image6.jpg" />
     </div>
+<div class="card-group">
+    <div class="card">
+        <img src="~/images/yerler.png" class="card-img-top w-100 d-block" />
+        <div class="card-body">
+            <h4 class="card-title">Yerler</h4>
+            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+            <a class="btn btn-outline-primary" role="button" href="/List/IndexYer">Button</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="~/images/postlar.jpg" class="card-img-top w-100 d-block" />
+        <div class="card-body">
+            <h4 class="card-title">Postlar</h4>
+            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+            <a class="btn btn-outline-primary" role="button" href="/List/IndexPost">Button</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="~/images/tagler.jpg" class="card-img-top w-100 d-block" />
+        <div class="card-body">
+            <h4 class="card-title">Tagler</h4>
+            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+            <a class="btn btn-outline-primary" role="button" href="/List/Index">Button</a>
+        </div>
+    </div>
+</div>

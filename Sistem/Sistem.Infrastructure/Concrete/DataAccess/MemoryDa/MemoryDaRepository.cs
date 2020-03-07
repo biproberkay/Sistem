@@ -14,7 +14,7 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDa
             throw new NotImplementedException();
         }
 
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
             throw new NotImplementedException();
         }
