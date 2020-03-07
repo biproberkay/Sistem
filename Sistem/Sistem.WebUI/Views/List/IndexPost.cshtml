@@ -99,16 +99,24 @@
                             <div class="clean-blog-post">
                                 <div class="row">
                                     <div class="col-lg-5">
-                                        <img class="rounded img-fluid" src="/StaticFiles/main/assets/img/tech/image4.jpg">
+                                        @if (item.Summary.Contains("http"))
+                                        {
+                                            <img class="rounded img-fluid" src="/StaticFiles/main/assets/img/tech/image4.jpg">
+                                        }
+                                        else
+                                        {
+
+                                            <img class="rounded img-fluid" src="@item.Summary">
+                                        }
                                     </div>
                                     <div class="col-lg-7">
                                         <h3>@item.Title</h3>
                                         <div class="info">
-                                            <span class="text-muted">@item.DateCreated by&nbsp;<a href="#">John Smith</a></span>
+                                            <span class="text-muted">@item.DateCreated.ToString("f") by&nbsp;<a href="#">John Smith</a></span>
                                         </div>
-                                        <p>@item.Summary</p>
+                                        <p class="text-break">@item.Summary</p>
                                         <a class="btn btn-outline-primary btn-sm" role="button" href="blog-post.html">Read More</a>
-                                        @Html.ActionLink("Makaleye Git!", "DetailsPost", "Details", new { Area = "Member", id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", @role = "button" })
+                                        @Html.ActionLink("Makaleye Git!", "PostOku", "Details", new { Area = "Member", id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", @role = "button" })
                                     </div>
                                 </div>
                             </div>

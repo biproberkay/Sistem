@@ -16,17 +16,14 @@ namespace Sistem.WebUI.Areas.Member.Controllers
         //private IServiceRepository<Yer> _yerService;
         private IServiceYer _yerServiceMore;
         //private IServiceRepository<Post> _postService;
+        private IPostService _postService;
 
-        public DetailsController(
-            //IServiceRepository<Yer> yerService,
-            IServiceYer yerServiceMore
-            //,
-            //IServiceRepository<Post> postService
-            )
+        public DetailsController(IServiceYer yerServiceMore, IPostService postService)
         {
             //_yerService = yerService;
             _yerServiceMore = yerServiceMore;
             //_postService = postService;
+            _postService = postService;
         }
         public IActionResult DetailsYer(int? id)
         { 
@@ -62,6 +59,11 @@ namespace Sistem.WebUI.Areas.Member.Controllers
                 YerChilds = yer.YerChilds.ToList()
             };
             return View(yerModel);
+        }
+
+        public IActionResult PostOku(int id)
+        {
+            return View(_postService.GetPostDetails(id));
         }
     }
 }

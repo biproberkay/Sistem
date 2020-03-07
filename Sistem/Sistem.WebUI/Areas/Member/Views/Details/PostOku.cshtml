@@ -1,0 +1,79 @@
+﻿@model Sistem.Core.Entities.Post
+
+@{
+    ViewData["Title"] = "PostOku";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <main class="page blog-post">
+        <section class="clean-block clean-post dark">
+            <div class="container">
+                <div class="block-content">
+                    <div class="post-image"
+                         style="background-image: url('@Model.Summary');">
+                        @*@Url.Content("/StaticFiles/main/assets/img/scenery/image3.jpg")*@
+                    </div>
+                    <div class="post-body">
+                        <h3>@Html.DisplayFor(model => model.Title)</h3>
+                        <div class="post-info">
+                            <span>
+                                By Yazarın Adı
+                                @*<strong>@Html.DisplayFor(model => model.Yer.Title)</strong>*@
+                            </span>
+                            <span>
+                                <strong>@Model.DateCreated.ToString("f")</strong>
+                            </span>
+                        </div>
+                        <p>
+                            <strong>@Html.DisplayFor(model => model.Body)</strong>
+                        </p>
+                        <dl class="row">
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Title)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Title)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Summary)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Summary)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Body)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Body)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.DateCreated)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.DateCreated)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.DateModified)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.DateModified)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Yer)
+                            </dt>
+                            <dd class="col-sm-10">
+                            </dd>
+                        </dl>
+
+                        <div>
+                            <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                            <a asp-action="Index">Back to List</a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
