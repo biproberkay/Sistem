@@ -4,10 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Sistem.WebUI.Areas.Manager.Controllers 
+namespace Sistem.WebUI.Controllers
 {
-    [Area("Manager")]
-    public class HomeController : Controller
+    public class EditController : Controller 
     {
         public IActionResult Index()
         {
