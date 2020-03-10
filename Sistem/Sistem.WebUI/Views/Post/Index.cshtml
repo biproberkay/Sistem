@@ -1,5 +1,5 @@
-﻿@model ListVM
-
+﻿@*@model ListVM*@
+@model List<Post>
 @{
     ViewData["Title"] = "IndexPost";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -20,6 +20,7 @@
             <div class="row">
                 <div class="col-md-4 d-flex flex-column justify-content-start align-items-center d-flex block-content">
                     <div class="sticky-top pt-5">
+                        @*  
                         @foreach (var item in Model.Yers.Where(y => y.Level == 1))
                         {
                             <div role="tablist" id="accordion-@item.Id">
@@ -89,17 +90,18 @@
                                 </div>
                             </div>
                         }
+                         *@
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="block-content">
-                        @foreach (var item in Model.Posts)
+                        @foreach (var item in Model)
                         {
 
                             <div class="clean-blog-post">
                                 <div class="row">
                                     <div class="col-lg-5">
-                                        <img class="rounded img-fluid" src="/StaticFiles/main/assets/img/tech/image4.jpg">
+                                        <img class="rounded img-fluid" src="/main/assets/img/tech/image4.jpg">
                                     </div>
                                     <div class="col-lg-7">
                                         <h3>@item.Title</h3>
@@ -108,7 +110,7 @@
                                         </div>
                                         <p>@item.Summary</p>
                                         <a class="btn btn-outline-primary btn-sm" role="button" href="blog-post.html">Read More</a>
-                                        @Html.ActionLink("Makaleye Git!", "DetailsPost", "Details", new { Area = "Member", id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", @role = "button" })
+                                        @Html.ActionLink("Makaleye Git!","Details", "Post",  new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", @role = "button" })
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +119,7 @@
                         <div class="clean-blog-post">
                             <div class="row">
                                 <div class="col-lg-5">
-                                    <img class="rounded img-fluid" src="/StaticFiles/main/assets/img/tech/image4.jpg">
+                                    <img class="rounded img-fluid" src="~/main/assets/img/tech/image3.png">
                                 </div>
                                 <div class="col-lg-7">
                                     <h3>Lorem Ipsum dolor sit amet</h3>
@@ -139,37 +141,39 @@
     </section>
 </main>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table-responsive-md">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Summary</th>
-            <th>Body</th>
-            <th>ArticleDateCreated</th>
-            <th>ArticleDateModified</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Posts)
-        {
+<section class="clean-block p-5" >
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table-responsive">
+        <thead>
             <tr>
-                <td>@item.Id</td>
-                <td>@item.Title</td>
-                <td>@item.Summary</td>
-                <td>@item.Body</td>
-                <td>@item.DateCreated</td>
-                <td>@item.DateModified</td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Summary</th>
+                <th>Body</th>
+                <th>ArticleDateCreated</th>
+                <th>ArticleDateModified</th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Title</td>
+                    <td >@item.Summary</td>
+                    <td class="text1line">@item.Body</td>
+                    <td>@item.DateCreated</td>
+                    <td>@item.DateModified</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
