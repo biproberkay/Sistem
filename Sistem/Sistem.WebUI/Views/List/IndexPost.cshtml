@@ -1,0 +1,175 @@
+﻿@model ListVM
+
+@{
+    ViewData["Title"] = "IndexPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="page blog-post-list">
+    <section class="clean-block clean-blog-list dark">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="block-heading">
+                        <h2 class="text-info">Blog Post List</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 d-flex flex-column justify-content-start align-items-center d-flex block-content">
+                    <div class="sticky-top pt-5">
+                        @foreach (var item in Model.Yers.Where(y => y.Level == 1))
+                        {
+                            <div role="tablist" id="accordion-@item.Id">
+                                <div class="card">
+                                    <div role="tab" class="card-header">
+                                        <h5 class="mb-0">
+                                            <a data-toggle="collapse" aria-expanded="false"
+                                               aria-controls="accordion-@item.Id .item-@item.Id"
+                                               href="#accordion-@item.Id .item-@item.Id">
+                                                @item.Title ( @item.YerChilds.Count - 
+                                            @Model.Posts.Where(p => p.YerId == item.Id).ToList().Count )
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div role="tabpanel" data-parent="#accordion-@item.Id" class="collapse item-@item.Id">
+                                        <div class="card-body">
+                                            <p class="card-text">@item.Title</p>
+                                            @Html.ActionLink("Details", "DetailsYer", "Details", new { Area = "Member", id = item.Id }) |
+                                            @foreach (var iitem in item.YerChilds)
+                                            {
+                                                <div role="tablist" id="accordion-@iitem.Id">
+                                                    <div class="card">
+                                                        <div role="tab" class="card-header">
+                                                            <h5 class="mb-0">
+                                                                <a data-toggle="collapse" aria-expanded="false"
+                                                                   aria-controls="accordion-@iitem.Id .item-@iitem.Id"
+                                                                   href="#accordion-@iitem.Id .item-@iitem.Id">@iitem.Title</a>
+                                                            </h5>
+                                                            <p class="card-text">@Model.Posts.Where(p => p.YerId == iitem.Id).ToList().Count</p>
+                                                        </div>
+                                                        <div role="tabpanel" data-parent="#accordion-@iitem.Id"
+                                                             class="collapse item-@iitem.Id">
+                                                            <div class="card-body">
+                                                                <p class="card-text">@iitem.Title</p>
+                                                                @Html.ActionLink("Details", "DetailsYer", "Details", new { Area = "Member", id = iitem.Id }) |
+                                                                @foreach (var iiitem in iitem.YerChilds)
+                                                                {
+                                                                    <div role="tablist" id="accordion-@iiitem.Id">
+                                                                        <div class="card">
+                                                                            <div role="tab" class="card-header">
+                                                                                <h5 class="mb-0">
+                                                                                    <a data-toggle="collapse" aria-expanded="false"
+                                                                                       aria-controls="accordion-@iiitem.Id .item-@iiitem.Id"
+                                                                                       href="#accordion-@iiitem.Id .item-@iiitem.Id">@iiitem.Title</a>
+                                                                                </h5>
+                                                                                <p class="card-text">@Model.Posts.Where(p => p.YerId == iiitem.Id).ToList().Count</p>
+                                                                            </div>
+                                                                            <div role="tabpanel" data-parent="#accordion-@iiitem.Id"
+                                                                                 class="collapse item-@iiitem.Id">
+                                                                                <div class="card-body">
+                                                                                    <p class="card-text">@iiitem.Title</p>
+                                                                                    @Html.ActionLink("Details", "DetailsYer", "Details", new { Area = "Member", id = iiitem.Id }) |
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="block-content">
+                        @foreach (var item in Model.Posts)
+                        {
+
+                            <div class="clean-blog-post">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <img class="rounded img-fluid" src="/StaticFiles/main/assets/img/tech/image4.jpg">
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <h3>@item.Title</h3>
+                                        <div class="info">
+                                            <span class="text-muted">@item.DateCreated by&nbsp;<a href="#">John Smith</a></span>
+                                        </div>
+                                        <p>@item.Summary</p>
+                                        <a class="btn btn-outline-primary btn-sm" role="button" href="blog-post.html">Read More</a>
+                                        @Html.ActionLink("Makaleye Git!", "DetailsPost", "Details", new { Area = "Member", id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", @role = "button" })
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        <div class="clean-blog-post">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <img class="rounded img-fluid" src="/StaticFiles/main/assets/img/tech/image4.jpg">
+                                </div>
+                                <div class="col-lg-7">
+                                    <h3>Lorem Ipsum dolor sit amet</h3>
+                                    <div class="info">
+                                        <span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John Smith</a></span>
+                                    </div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                                        mattis vitae leo.
+                                    </p>
+                                    <a class="btn btn-outline-primary btn-sm" role="button" href="blog-post.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table-responsive-md">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Summary</th>
+            <th>Body</th>
+            <th>ArticleDateCreated</th>
+            <th>ArticleDateModified</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Posts)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Title</td>
+                <td>@item.Summary</td>
+                <td>@item.Body</td>
+                <td>@item.DateCreated</td>
+                <td>@item.DateModified</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
