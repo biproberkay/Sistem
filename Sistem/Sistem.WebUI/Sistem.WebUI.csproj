@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Manager\**" />
+    <Compile Remove="Areas\Member\**" />
+    <Content Remove="Areas\Manager\**" />
+    <Content Remove="Areas\Member\**" />
+    <EmbeddedResource Remove="Areas\Manager\**" />
+    <EmbeddedResource Remove="Areas\Member\**" />
+    <None Remove="Areas\Manager\**" />
+    <None Remove="Areas\Member\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
@@ -14,10 +25,132 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Views\Home\" />
-    <Folder Include="Areas\Admin\Views\Yer\" />
-    <Folder Include="Areas\Manager\Views\Home\" />
-    <Folder Include="Areas\Member\Views\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Me\Controllers\" />
+    <Folder Include="Areas\Me\Data\" />
+    <Folder Include="Areas\Me\Models\" />
+    <Folder Include="Areas\Me\Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\admin\404.html" />
+    <None Include="wwwroot\admin\assets\bootstrap\css\bootstrap.min.css" />
+    <None Include="wwwroot\admin\assets\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\admin\assets\fonts\fa-brands-400.eot" />
+    <None Include="wwwroot\admin\assets\fonts\fa-brands-400.svg" />
+    <None Include="wwwroot\admin\assets\fonts\fa-brands-400.ttf" />
+    <None Include="wwwroot\admin\assets\fonts\fa-brands-400.woff" />
+    <None Include="wwwroot\admin\assets\fonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\admin\assets\fonts\fa-regular-400.eot" />
+    <None Include="wwwroot\admin\assets\fonts\fa-regular-400.svg" />
+    <None Include="wwwroot\admin\assets\fonts\fa-regular-400.ttf" />
+    <None Include="wwwroot\admin\assets\fonts\fa-regular-400.woff" />
+    <None Include="wwwroot\admin\assets\fonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\admin\assets\fonts\fa-solid-900.eot" />
+    <None Include="wwwroot\admin\assets\fonts\fa-solid-900.svg" />
+    <None Include="wwwroot\admin\assets\fonts\fa-solid-900.ttf" />
+    <None Include="wwwroot\admin\assets\fonts\fa-solid-900.woff" />
+    <None Include="wwwroot\admin\assets\fonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\admin\assets\fonts\fontawesome-all.min.css" />
+    <None Include="wwwroot\admin\assets\img\avatars\avatar1.jpeg" />
+    <None Include="wwwroot\admin\assets\img\avatars\avatar2.jpeg" />
+    <None Include="wwwroot\admin\assets\img\avatars\avatar3.jpeg" />
+    <None Include="wwwroot\admin\assets\img\avatars\avatar4.jpeg" />
+    <None Include="wwwroot\admin\assets\img\avatars\avatar5.jpeg" />
+    <None Include="wwwroot\admin\assets\img\dogs\image1.jpeg" />
+    <None Include="wwwroot\admin\assets\img\dogs\image2.jpeg" />
+    <None Include="wwwroot\admin\assets\img\dogs\image3.jpeg" />
+    <None Include="wwwroot\admin\assets\img\Layer 0.jpg" />
+    <None Include="wwwroot\admin\assets\js\bs-init.js" />
+    <None Include="wwwroot\admin\assets\js\chart.min.js" />
+    <None Include="wwwroot\admin\assets\js\jquery.min.js" />
+    <None Include="wwwroot\admin\assets\js\theme.js" />
+    <None Include="wwwroot\admin\blank.html" />
+    <None Include="wwwroot\admin\forgot-password.html" />
+    <None Include="wwwroot\admin\index.html" />
+    <None Include="wwwroot\admin\login.html" />
+    <None Include="wwwroot\admin\profile.html" />
+    <None Include="wwwroot\admin\register.html" />
+    <None Include="wwwroot\admin\table.html" />
+    <None Include="wwwroot\main\about-us.html" />
+    <None Include="wwwroot\main\assets\bootstrap\css\bootstrap.min.css" />
+    <None Include="wwwroot\main\assets\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\main\assets\css\sidebar.css" />
+    <None Include="wwwroot\main\assets\css\smoothproducts.css" />
+    <None Include="wwwroot\main\assets\fonts\Simple-Line-Icons.eot" />
+    <None Include="wwwroot\main\assets\fonts\simple-line-icons.min.css" />
+    <None Include="wwwroot\main\assets\fonts\Simple-Line-Icons.svg" />
+    <None Include="wwwroot\main\assets\fonts\Simple-Line-Icons.ttf" />
+    <None Include="wwwroot\main\assets\fonts\Simple-Line-Icons.woff" />
+    <None Include="wwwroot\main\assets\fonts\Simple-Line-Icons.woff2" />
+    <None Include="wwwroot\main\assets\img\avatars\avatar1.jpg" />
+    <None Include="wwwroot\main\assets\img\avatars\avatar2.jpg" />
+    <None Include="wwwroot\main\assets\img\avatars\avatar3.jpg" />
+    <None Include="wwwroot\main\assets\img\scenery\image1.jpg" />
+    <None Include="wwwroot\main\assets\img\scenery\image3.jpg" />
+    <None Include="wwwroot\main\assets\img\scenery\image4.jpg" />
+    <None Include="wwwroot\main\assets\img\scenery\image5.jpg" />
+    <None Include="wwwroot\main\assets\img\scenery\image6.jpg" />
+    <None Include="wwwroot\main\assets\img\star-empty.svg" />
+    <None Include="wwwroot\main\assets\img\star-half-empty.svg" />
+    <None Include="wwwroot\main\assets\img\star.svg" />
+    <None Include="wwwroot\main\assets\img\tech\image1.jpg" />
+    <None Include="wwwroot\main\assets\img\tech\image2.jpg" />
+    <None Include="wwwroot\main\assets\img\tech\image3.png" />
+    <None Include="wwwroot\main\assets\img\tech\image4.jpg" />
+    <None Include="wwwroot\main\assets\js\jquery.min.js" />
+    <None Include="wwwroot\main\assets\js\navbar.js" />
+    <None Include="wwwroot\main\assets\js\smoothproducts.min.js" />
+    <None Include="wwwroot\main\assets\js\theme.js" />
+    <None Include="wwwroot\main\blog-post-list.html" />
+    <None Include="wwwroot\main\blog-post.html" />
+    <None Include="wwwroot\main\catalog-page.html" />
+    <None Include="wwwroot\main\contact-us.html" />
+    <None Include="wwwroot\main\faq.html" />
+    <None Include="wwwroot\main\features.html" />
+    <None Include="wwwroot\main\gallery.html" />
+    <None Include="wwwroot\main\index.html" />
+    <None Include="wwwroot\main\login.html" />
+    <None Include="wwwroot\main\payment-page.html" />
+    <None Include="wwwroot\main\pricing.html" />
+    <None Include="wwwroot\main\product-page.html" />
+    <None Include="wwwroot\main\registration.html" />
+    <None Include="wwwroot\main\service-page.html" />
+    <None Include="wwwroot\main\shopping-cart.html" />
+    <None Include="wwwroot\main\slider.html" />
+    <None Include="wwwroot\main\testimonials.html" />
+    <None Include="wwwroot\me\assets\bootstrap\css\bootstrap.min.css" />
+    <None Include="wwwroot\me\assets\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\me\assets\fonts\ionicons.eot" />
+    <None Include="wwwroot\me\assets\fonts\ionicons.min.css" />
+    <None Include="wwwroot\me\assets\fonts\ionicons.svg" />
+    <None Include="wwwroot\me\assets\fonts\ionicons.ttf" />
+    <None Include="wwwroot\me\assets\fonts\ionicons.woff" />
+    <None Include="wwwroot\me\assets\img\avatars\avatar.jpg" />
+    <None Include="wwwroot\me\assets\img\g-bipro.png" />
+    <None Include="wwwroot\me\assets\img\Layer 0.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image1.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image2.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image3.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image4.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image5.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image6.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image7.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image8.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image9.jpg" />
+    <None Include="wwwroot\me\assets\img\tech\image4.jpg" />
+    <None Include="wwwroot\me\assets\img\tech\image6.png" />
+    <None Include="wwwroot\me\assets\js\jquery.min.js" />
+    <None Include="wwwroot\me\assets\js\theme.js" />
+    <None Include="wwwroot\me\contact.html" />
+    <None Include="wwwroot\me\cv.html" />
+    <None Include="wwwroot\me\hire-me.html" />
+    <None Include="wwwroot\me\index.html" />
+    <None Include="wwwroot\me\project-page.html" />
+    <None Include="wwwroot\me\projects-no-images.html" />
   </ItemGroup>
 
 
