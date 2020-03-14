@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Blog\Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Me\Controllers\" />
@@ -100,7 +101,7 @@
     <None Include="wwwroot\main\assets\img\tech\image3.png" />
     <None Include="wwwroot\main\assets\img\tech\image4.jpg" />
     <None Include="wwwroot\main\assets\js\jquery.min.js" />
-    <None Include="wwwroot\main\assets\js\navbar.js" />
+    <None Include="wwwroot\js\navbar.js" />
     <None Include="wwwroot\main\assets\js\smoothproducts.min.js" />
     <None Include="wwwroot\main\assets\js\theme.js" />
     <None Include="wwwroot\main\blog-post-list.html" />
@@ -149,6 +150,29 @@
     <None Include="wwwroot\me\index.html" />
     <None Include="wwwroot\me\project-page.html" />
     <None Include="wwwroot\me\projects-no-images.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Blog\Views\Shared\Error.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Blog\Views\Shared\_Layout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Blog\Views\Shared\_ValidationScriptsPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Blog\Views\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Blog\Views\_ViewStart.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 

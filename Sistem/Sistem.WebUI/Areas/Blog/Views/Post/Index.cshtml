@@ -1,0 +1,89 @@
+﻿@*@model ListVM*@
+@model List<Post>
+@{
+    ViewData["Title"] = "IndexPost";
+    //Layout = "~/Areas/Blog/Views/Shared/_Layout.cshtml";
+}
+
+<div class="block-heading">
+    <h2 class="text-info">Blog Post List</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+</div>
+<div class="block-content">
+    @foreach (var item in Model)
+    {
+        <div class="clean-blog-post p-1">
+            <div class="row">
+                <div class="col-lg-5">
+                    <img class="rounded img-fluid" src="/main/assets/img/tech/image4.jpg">
+                </div>
+                <div class="col-lg-7">
+                    <h3>@item.Title</h3>
+                    <div class="info">
+                        <span class="text-muted">@item.DateCreated by&nbsp;<a href="#">John Smith</a></span>
+                    </div>
+                    <p>@item.Summary</p>
+                    <a class="btn btn-outline-primary btn-sm" role="button" href="blog-post.html">Read More</a>
+                    @Html.ActionLink("Makaleye Git!", "Details", "Post", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", @role = "button" })
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="clean-blog-post">
+        <div class="row">
+            <div class="col-lg-5">
+                <img class="rounded img-fluid" src="~/main/assets/img/tech/image3.png">
+            </div>
+            <div class="col-lg-7">
+                <h3>Lorem Ipsum dolor sit amet</h3>
+                <div class="info">
+                    <span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John Smith</a></span>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                    mattis vitae leo.
+                </p>
+                <a class="btn btn-outline-primary btn-sm" role="button" href="blog-post.html">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="clean-block p-5">
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Summary</th>
+                <th>Body</th>
+                <th>ArticleDateCreated</th>
+                <th>ArticleDateModified</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Title</td>
+                    <td>@item.Summary</td>
+                    <td class="text1line">@item.Body</td>
+                    <td>@item.DateCreated</td>
+                    <td>@item.DateModified</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+

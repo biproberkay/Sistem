@@ -26,5 +26,13 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
                             .FirstOrDefault();
             return t;
         }
+
+        public override List<Yer> GetAll()
+        {
+            var yerler = _context.Yers
+                .Include(y => y.YerChilds).ToList();
+
+            return base.GetAll();
+        }
     }
 }
