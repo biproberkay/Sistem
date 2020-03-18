@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Sistem.Core.Abstract.DaInterfaces;
+using Sistem.Core.Abstract.DalInterfaces;
 using Sistem.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
+namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDal
 {
-    public class EfCorePostDal : EfCoreDaRepository<Post>, IPostDal
+    public class EfCorePostDal : EfCoreDalRepository<Post>, IPostDal
     {
         private EfCoreSistemContext _context;
         public EfCorePostDal(EfCoreSistemContext context) : base(context)
@@ -16,7 +16,7 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
             _context = context;
         }
 
-        public Post GetPostDetails(int id)
+        public override Post GetById(int id)
         {
             var t = _context.Posts
                             .Where(p => p.Id == id)
@@ -52,6 +52,11 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
             }
 
             return posts.Count();
+        }
+
+        public Post GetPostDetails(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

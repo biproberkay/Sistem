@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa;
+using Sistem.Infrastructure.Concrete.DataAccess.EfCoreDal;
 
 namespace Sistem.Infrastructure.Migrations
 {

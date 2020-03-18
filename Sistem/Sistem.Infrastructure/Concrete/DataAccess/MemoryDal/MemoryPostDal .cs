@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDa
+namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDal
 {
-    public class MemoryPostDa : MemoryDaRepository<Post>
+    public class MemoryPostDal : MemoryDalRepository<Post>
     {
         public override List<Post> GetAll()
         {

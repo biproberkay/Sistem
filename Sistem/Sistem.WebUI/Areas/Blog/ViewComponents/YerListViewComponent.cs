@@ -10,8 +10,8 @@ namespace Sistem.WebUI.Areas.Blog.ViewComponents
 {
     public class YerListViewComponent : ViewComponent
     {
-        private IServiceYer _yerService;
-        public YerListViewComponent(IServiceYer yerService) 
+        private IYerService _yerService;
+        public YerListViewComponent(IYerService yerService) 
         {
             _yerService = yerService;
         }

@@ -10,11 +10,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
-using Sistem.Core.Abstract.DaInterfaces;
+using Sistem.Core.Abstract.DalInterfaces;
 using Sistem.Core.Abstract.ServiceInterfaces;
 using Sistem.Core.Entities;
-using Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa;
-using Sistem.Infrastructure.Concrete.DataAccess.MemoryDa;
+using Sistem.Infrastructure.Concrete.DataAccess.EfCoreDal;
+using Sistem.Infrastructure.Concrete.DataAccess.MemoryDal;
 using Sistem.Infrastructure.Concrete.Managers;
 
 namespace Sistem.WebUI
@@ -37,24 +37,27 @@ namespace Sistem.WebUI
             foreach (var T in Ts)
             {
                 services.AddScoped<IServiceRepository<T>, ManagerRepository<T>>();
-                services.AddScoped<IDaRepository<T>, MemoryDaRepository<T>>();
+                services.AddScoped<IDalRepository<T>, MemoryDaRepository<T>>();
             }
             */
 
-            services.AddScoped<IServiceRepository<Yer>, ManagerRepository<Yer>>();
-            services.AddScoped<IDaRepository<Yer>, YerMemoryDal>();
+            //services.AddScoped<IServiceRepository<Yer>, ManagerRepository<Yer>>();
+            //services.AddScoped<IDalRepository<Yer>, EfCoreDalRepository<Yer>>();
+            services.AddScoped<IYerService, YerManager>();
+            services.AddScoped<IYerDal, EfCoreYerDal>();
 
-            services.AddScoped<IServiceRepository<TextLog>, ManagerRepository<TextLog>>();
-            services.AddScoped<IDaRepository<TextLog>, TLogMemoryDal>();
-
-            services.AddScoped<IServiceRepository<PictureLog>, ManagerRepository<PictureLog>>();
-            services.AddScoped<IDaRepository<PictureLog>, PLogMemoryDal>();
-
-            //services.AddScoped<IDaRepository<Post>, MemoryPostDa>();
-            services.AddScoped<IServiceRepository<Post>, ManagerRepository<Post>>();
-            services.AddScoped<IDaRepository<Post>, EfCoreDaRepository<Post>>();
+            //services.AddScoped<IDalRepository<Post>, MemoryPostDa>();
+            //services.AddScoped<IServiceRepository<Post>, ManagerRepository<Post>>();
+            //services.AddScoped<IDalRepository<Post>, EfCoreDalRepository<Post>>();
             services.AddScoped<IPostService, PostManager>();
             services.AddScoped<IPostDal, EfCorePostDal>();
+
+            services.AddScoped<IServiceRepository<TextLog>, ManagerRepository<TextLog>>();
+            services.AddScoped<IDalRepository<TextLog>, TLogMemoryDal>();
+
+            services.AddScoped<IServiceRepository<PictureLog>, ManagerRepository<PictureLog>>();
+            services.AddScoped<IDalRepository<PictureLog>, PLogMemoryDal>();
+
 
             services.AddControllersWithViews();
             services.AddMvc(options => options.EnableEndpointRouting = false);

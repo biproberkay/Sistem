@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sistem.Core.Abstract.DaInterfaces
+namespace Sistem.Core.Abstract.DalInterfaces 
 {
-    public interface IPostDal : IDaRepository<Post>
+    public interface IPostDal : IDalRepository<Post>
     {
         public int GetPostCountByYer(string yer);
         public Post GetPostDetails(int id);

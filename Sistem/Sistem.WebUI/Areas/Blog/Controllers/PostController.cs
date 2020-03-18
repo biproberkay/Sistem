@@ -14,10 +14,8 @@ namespace Sistem.WebUI.Areas.Blog.Controllers
     public class PostController : DefaultController<Post>
     {
         private IPostService _postService;
-        private IServiceRepository<Post> _tService;
         public PostController(IServiceRepository<Post> tService, IPostService postService) : base(tService)
         {
-            _tService = tService;
             _postService = postService;
         }
 
@@ -34,11 +32,6 @@ namespace Sistem.WebUI.Areas.Blog.Controllers
             };
 
             return View();
-        }
-
-        public override ActionResult Details(int id)
-        {
-            return base.Details(id);
         }
 
         public ActionResult PostOku(int id)

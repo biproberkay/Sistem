@@ -1,4 +1,4 @@
-﻿using Sistem.Core.Abstract.DaInterfaces;
+﻿using Sistem.Core.Abstract.DalInterfaces;
 using Sistem.Core.Abstract.ServiceInterfaces;
 using Sistem.Core.Entities;
 using System;
@@ -7,18 +7,18 @@ using System.Text;
 
 namespace Sistem.Infrastructure.Concrete.Managers
 {
-    public class YerManager : ManagerRepository<Yer>, IServiceYer
+    public class YerManager : ManagerRepository<Yer>, IYerService
     {
-        private IDaYer _yerDa;
+        private IYerDal _yerDal;
 
-        public YerManager(IDaYer yerDa , IDaRepository<Yer> da) : base(da)
+        public YerManager(IYerDal yerDal , IDalRepository<Yer> dal) : base(dal)
         {
-            _yerDa = yerDa;
+            _yerDal = yerDal;
         }
 
         public Yer GetYerDetails(int id)
         {
-            return _yerDa.GetYerDetails(id);
+            return _yerDal.GetYerDetails(id);
         }
     }
 }

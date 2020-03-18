@@ -15,10 +15,5 @@ namespace Sistem.WebUI.Areas.Admin.Controllers
         public YerController(IServiceRepository<Yer> tService) : base(tService)
         {
         }
-        public override ActionResult Index()
-        {
-            
-            return base.Index();
-        }
     }
 }

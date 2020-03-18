@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sistem.Core.Abstract.DaInterfaces
+namespace Sistem.Core.Abstract.DalInterfaces 
 {
-    public interface IDaYer : IDaRepository<Yer>
+    public interface IYerDal : IDalRepository<Yer> 
     {
         public Yer GetYerDetails(int id);
     }

@@ -1,18 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Sistem.Core.Abstract.DaInterfaces;
+using Sistem.Core.Abstract.DalInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
+namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDal
 {
-    public class EfCoreDaRepository<T/*, TContext*/> : IDaRepository<T> 
+    public class EfCoreDalRepository<T/*, TContext*/> : IDalRepository<T>
         where T : class
         //where TContext : DbContext, new()
     {
         private EfCoreSistemContext _context;
-        public EfCoreDaRepository(EfCoreSistemContext context)
+        public EfCoreDalRepository(EfCoreSistemContext context)
         {
             _context = context;
         }

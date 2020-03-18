@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sistem.Core.Abstract.DaInterfaces
+namespace Sistem.Core.Abstract.DalInterfaces 
 {
-    public interface IDaRepository<T>
+    public interface IDalRepository<T>
     {
         List<T> GetAll();
         T GetById(int id);

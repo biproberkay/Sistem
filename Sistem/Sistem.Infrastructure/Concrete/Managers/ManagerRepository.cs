@@ -1,4 +1,4 @@
-﻿using Sistem.Core.Abstract.DaInterfaces;
+﻿using Sistem.Core.Abstract.DalInterfaces;
 using Sistem.Core.Abstract.ServiceInterfaces;
 using System;
 using System.Collections.Generic;
@@ -8,20 +8,20 @@ namespace Sistem.Infrastructure.Concrete.Managers
 {
     public class ManagerRepository<T> : IServiceRepository<T> where T : class
     {
-        private IDaRepository<T> _da;
+        private IDalRepository<T> _dal;
 
-        public ManagerRepository(IDaRepository<T> da)
+        public ManagerRepository(IDalRepository<T> dal)
         {
-            _da = da;
+            _dal = dal;
         }
         public List<T> GetAll()
         {
-            return _da.GetAll();
+            return _dal.GetAll();
         }
 
         public T GetById(int id)
         {
-            return _da.GetById(id);
+            return _dal.GetById(id);
         }
     }
 }

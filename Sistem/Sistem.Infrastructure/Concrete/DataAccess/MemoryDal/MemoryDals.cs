@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDa
+namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDal
 {
-    public class YerMemoryDal : MemoryDaRepository<Yer>
+    public class YerMemoryDal : MemoryDalRepository<Yer>
     {
         public override List<Yer> GetAll()
         {
@@ -19,9 +19,10 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDa
             return yerler;
         }
     }
-    public class TLogMemoryDal : MemoryDaRepository<TextLog>
+    public class TLogMemoryDal : MemoryDalRepository<TextLog>
     {
         /* eğer(ezilecek-se)
+         */
         public override List<TextLog> GetAll()
         {
             List<TextLog> TLogs = new List<TextLog>()
@@ -35,9 +36,8 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDa
 
             return TLogs;
         }
-         */
     }
-    public class PLogMemoryDal : MemoryDaRepository<PictureLog> { }
-    public class VLogMemoryDal : MemoryDaRepository<VideoLog> { }
-    public class SLogMemoryDal : MemoryDaRepository<SoundLog> { }
+    public class PLogMemoryDal : MemoryDalRepository<PictureLog> { }
+    public class VLogMemoryDal : MemoryDalRepository<VideoLog> { }
+    public class SLogMemoryDal : MemoryDalRepository<SoundLog> { }
 }

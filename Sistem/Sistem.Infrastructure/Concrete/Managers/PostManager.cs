@@ -1,4 +1,4 @@
-﻿using Sistem.Core.Abstract.DaInterfaces;
+﻿using Sistem.Core.Abstract.DalInterfaces;
 using Sistem.Core.Abstract.ServiceInterfaces;
 using Sistem.Core.Entities;
 using System;
@@ -11,7 +11,7 @@ namespace Sistem.Infrastructure.Concrete.Managers
     {
         private IPostDal _postDal;
 
-        public PostManager(IPostDal postDal , IDaRepository<Post> da) : base(da)
+        public PostManager(IPostDal postDal , IDalRepository<Post> dal) : base(dal)
         {
             _postDal = postDal;
         }

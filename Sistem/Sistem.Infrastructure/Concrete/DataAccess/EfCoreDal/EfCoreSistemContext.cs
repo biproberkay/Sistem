@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
+namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDal
 {
     public class EfCoreSistemContext : DbContext
     {

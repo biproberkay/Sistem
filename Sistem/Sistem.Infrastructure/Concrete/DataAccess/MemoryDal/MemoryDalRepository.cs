@@ -1,12 +1,12 @@
-﻿using Sistem.Core.Abstract.DaInterfaces;
+﻿using Sistem.Core.Abstract.DalInterfaces;
 using Sistem.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDa
+namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDal
 {
-    public class MemoryDaRepository<T> : IDaRepository<T>
+    public class MemoryDalRepository<T> : IDalRepository<T> 
         where T :class, new()
     {
         List<T> ts = new List<T>()
