@@ -63,12 +63,14 @@ namespace Sistem.WebUI
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
+            app.UseStaticFiles();
+            /** custom middleware için
             // Serve my app-specific default file, if present.
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
             options.DefaultFileNames.Add("/MyStaticFiles/main/index.html");
             app.UseDefaultFiles(options);
-            //app.UseStaticFiles();
             app.UseStaticFiles();//for wwwroot
             app.UseStaticFiles(new StaticFileOptions
             {
@@ -76,6 +78,7 @@ namespace Sistem.WebUI
                     Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles")),
                 RequestPath = "/StaticFiles"
             });
+             */
 
             app.UseAuthorization();
 
