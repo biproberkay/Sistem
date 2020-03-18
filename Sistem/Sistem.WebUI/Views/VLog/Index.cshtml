@@ -1,0 +1,12 @@
+﻿@model List<VideoLog>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+@foreach (var tlog in Model)
+{
+    <div>@tlog.Id : @tlog.Title</div>
+}

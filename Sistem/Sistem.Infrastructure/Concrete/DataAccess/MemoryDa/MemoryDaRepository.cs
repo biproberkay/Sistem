@@ -7,11 +7,18 @@ using System.Text;
 namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDa
 {
     public class MemoryDaRepository<T> : IDaRepository<T>
+        where T :class, new()
     {
+        List<T> ts = new List<T>()
+        {
+            new T(){},
+            new T(){},
+            new T(){},
+        };
 
         public virtual List<T> GetAll()
         {
-            throw new NotImplementedException();
+            return ts;
         }
 
         public T GetById(int id)

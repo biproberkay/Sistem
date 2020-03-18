@@ -9,16 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Guest\Data\" />
-    <Folder Include="Areas\Guest\Models\" />
-    <Folder Include="Areas\Manager\Data\" />
-    <Folder Include="Areas\Manager\Models\" />
-    <Folder Include="Areas\Member\Data\" />
-    <Folder Include="Areas\Member\Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Sistem.Core\Sistem.Core.csproj" />
     <ProjectReference Include="..\Sistem.Infrastructure\Sistem.Infrastructure.csproj" />
   </ItemGroup>

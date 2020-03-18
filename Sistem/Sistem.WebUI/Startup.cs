@@ -28,8 +28,24 @@ namespace Sistem.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            /** entityler için addscope foreach döndürmek
+            List<T> Ts = new List<T>();
+
+            foreach (var T in Ts)
+            {
+                services.AddScoped<IServiceRepository<T>, ManagerRepository<T>>();
+                services.AddScoped<IDaRepository<T>, MemoryDaRepository<T>>();
+            }
+            */
+
             services.AddScoped<IServiceRepository<Yer>, ManagerRepository<Yer>>();
-            services.AddScoped<IDaRepository<Yer>, MemoryYerDa>();
+            services.AddScoped<IDaRepository<Yer>, YerMemoryDal>();
+
+            services.AddScoped<IServiceRepository<TextLog>, ManagerRepository<TextLog>>();
+            services.AddScoped<IDaRepository<TextLog>, TLogMemoryDal>();
+
+            services.AddScoped<IServiceRepository<PictureLog>, ManagerRepository<PictureLog>>();
+            services.AddScoped<IDaRepository<PictureLog>, PLogMemoryDal>();
 
             services.AddControllersWithViews();
             services.AddMvc(options => options.EnableEndpointRouting = false);
