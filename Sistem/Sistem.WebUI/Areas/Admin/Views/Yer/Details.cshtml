@@ -1,0 +1,37 @@
+﻿@model Sistem.Core.Entities.Yer
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="card shadow">
+        
+        <div class="card-body">
+            <div class="col-md-2">
+                Id:
+            </div>
+            <div class="col-md-10">
+                @Model.Id
+            </div>
+            <div class="col-md-2">
+                Level:
+            </div>
+            <div class="col-md-10">
+                @Model.Level
+            </div>
+            <div class="col-md-2">
+                Title:
+            </div>
+            <div class="col-md-10">
+                @Model.Title
+            </div>
+            <div class="col-md-2">
+                ParentId:
+            </div>
+            <div class="col-md-10">
+                @Model.ParentId
+            </div>
+        </div>
+        
+    </div>
+

@@ -17,5 +17,6 @@ namespace Sistem.Core.Entities
         public int? ParentId { get; set; }
         public Yer Parent { get; set; }
         public virtual ICollection<Yer> YerChilds { get; set; }
+        public ICollection<Post> Posts { get; set; } 
     }
 }

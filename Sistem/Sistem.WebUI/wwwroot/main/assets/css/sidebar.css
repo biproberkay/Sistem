@@ -1,0 +1,23 @@
+@media (min-width:768px) {
+  .sidebar {
+    width: 14rem!important;
+  }
+}
+
+.sidebar {
+  width: 6.5rem;
+  min-height: 100vh;
+}
+
+.d-flex.flex-column.justify-content-start.align-items-center.col-md-4.d-flex.block-content {
+  padding: 16px;
+}
+
+.collapse-m5 {
+  margin: 5px;
+}
+
+.clean-block .block-heading {
+  /*padding-top: 40px;*/
+}
+
