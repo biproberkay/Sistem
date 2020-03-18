@@ -19,8 +19,11 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
         public Post GetPostDetails(int id)
         {
             var t = _context.Posts
-                            .Where(y => y.Id == id)
+                            .Where(p => p.Id == id)
                             .Include(y => y.Yer)
+                                .ThenInclude(y => y.Posts)
+                            .Include(y => y.Yer)
+                                .ThenInclude(y=>y.YerChilds)
                             //.Include(y => y.Comments)
                             //.Include(y => y.Ratings)
                             //.Include(y => y.Tags)
@@ -30,22 +33,25 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
 
         public override List<Post> GetAll()
         {
-            var yerler = _context.Posts
-                .Include(y => y.Yer).ToList();
+            var postsWyer = _context.Posts
+                .Include(p => p.Yer)
+                    .ThenInclude(y=>y.Parent)
+                    //.ThenInclude(y=>y.YerChilds)
+                .ToList();
 
             return base.GetAll();
         }
 
-        public Yer GetPostCountByYer(int id)
+        public int GetPostCountByYer(string yer)
         {
-            var t = _context.Posts
-                            .Where(y => y.YerId == id)
-                            .Include(y => y.Yer)
-                            //.Include(y => y.Comments)
-                            //.Include(y => y.Ratings)
-                            //.Include(y => y.Tags)
-                            .FirstOrDefault();
-            return t;
+            var posts = _context.Posts.AsQueryable();
+
+            if (!string.IsNullOrEmpty(yer))
+            {
+                posts.Include(p=>p.Yer).Any(a => a.Yer.Title.ToLower() == yer.ToLower());
+            }
+
+            return posts.Count();
         }
     }
 }

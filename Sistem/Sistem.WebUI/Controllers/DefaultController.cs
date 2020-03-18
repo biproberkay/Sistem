@@ -23,7 +23,7 @@ namespace Sistem.WebUI.Controllers
         }
 
         // GET: Default/Details/5
-        public ActionResult Details(int id)
+        public virtual ActionResult Details(int id)
         {
             var t = _tService.GetById(id);
             return View(t);
