@@ -39,7 +39,7 @@
                     <span>Profile</span>
                 </a>
             </li>
-            @foreach (var item in Model.Yerler.Where(y=>y.Level==1))
+            @foreach (var item in Model.Yerler.Where(y => y.Level == 1))
             {
                 <li class="nav-item" role="presentation">
                     @* ------------------------------------------------------------------------------------ *@
@@ -54,7 +54,7 @@
                                 @foreach (var iitem in item.YerChilds)
                                 {
                                     <li class="nav-item" role="presentation">
-                                    @* ------------------------------------------------------ *@
+                                        @* ------------------------------------------------------ *@
                                         <div>
                                             <a class="nav-link collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-@iitem.Id" href="#collapse-@iitem.Id" role="button">
                                                 <i class="fas fa-code"></i>
@@ -94,6 +94,31 @@
                 </li>
 
             }
+
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" href="/blog/tlog">
+                    <i class="fas fa-user"></i>
+                    <span>TLog</span>
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" href="/blog/plog">
+                    <i class="fas fa-user"></i>
+                    <span>PLog</span>
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" href="/blog/vlog">
+                    <i class="fas fa-user"></i>
+                    <span>VLog</span>
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" href="/blog/slog">
+                    <i class="fas fa-user"></i>
+                    <span>SLog</span>
+                </a>
+            </li>
         </ul>
         <div class="text-center d-none d-md-inline">
             <button class="btn rounded-circle border-0" id="sidebarToggle" type="button">

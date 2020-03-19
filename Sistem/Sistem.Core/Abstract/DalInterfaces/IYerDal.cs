@@ -7,6 +7,5 @@ namespace Sistem.Core.Abstract.DalInterfaces
 {
     public interface IYerDal : IDalRepository<Yer> 
     {
-        public Yer GetYerDetails(int id);
     }
 }

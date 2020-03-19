@@ -7,7 +7,5 @@ namespace Sistem.Core.Abstract.ServiceInterfaces
 {
     public interface IPostService : IServiceRepository<Post>
     {
-        public int GetPostCountByYer(string yer);
-        public Post GetPostDetails(int id);
     }
 }

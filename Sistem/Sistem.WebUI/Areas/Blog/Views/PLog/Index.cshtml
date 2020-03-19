@@ -1,0 +1,16 @@
+﻿@model List<PictureLog>
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+@foreach (var tlog in Model)
+{
+    <div class="mb-3 alert-danger ">
+        <div>@tlog.Id : @tlog.Title</div>
+        <div>@tlog.Id : @tlog.CreateDT</div>
+        <div>@tlog.Id : @tlog.Description</div>
+    </div>
+}

@@ -39,16 +39,17 @@ namespace Sistem.WebUI
                 services.AddScoped<IServiceRepository<T>, ManagerRepository<T>>();
                 services.AddScoped<IDalRepository<T>, MemoryDaRepository<T>>();
             }
-            */
+            **/
 
-            //services.AddScoped<IServiceRepository<Yer>, ManagerRepository<Yer>>();
-            //services.AddScoped<IDalRepository<Yer>, EfCoreDalRepository<Yer>>();
+            services.AddDbContext<EfCoreSistemContext>();//bunu unutmuþtum baya aradým.
+
+            services.AddScoped<IServiceRepository<Yer>, ManagerRepository<Yer>>();
+            services.AddScoped<IDalRepository<Yer>, EfCoreDalRepository<Yer>>();
             services.AddScoped<IYerService, YerManager>();
             services.AddScoped<IYerDal, EfCoreYerDal>();
 
-            //services.AddScoped<IDalRepository<Post>, MemoryPostDa>();
-            //services.AddScoped<IServiceRepository<Post>, ManagerRepository<Post>>();
-            //services.AddScoped<IDalRepository<Post>, EfCoreDalRepository<Post>>();
+            services.AddScoped<IServiceRepository<Post>, ManagerRepository<Post>>();
+            services.AddScoped<IDalRepository<Post>, EfCoreDalRepository<Post>>();
             services.AddScoped<IPostService, PostManager>();
             services.AddScoped<IPostDal, EfCorePostDal>();
 
@@ -58,6 +59,11 @@ namespace Sistem.WebUI
             services.AddScoped<IServiceRepository<PictureLog>, ManagerRepository<PictureLog>>();
             services.AddScoped<IDalRepository<PictureLog>, PLogMemoryDal>();
 
+            services.AddScoped<IServiceRepository<VideoLog>, ManagerRepository<VideoLog>>();
+            services.AddScoped<IDalRepository<VideoLog>, MemoryDalRepository<VideoLog>>();
+
+            services.AddScoped<IServiceRepository<SoundLog>, ManagerRepository<SoundLog>>();
+            services.AddScoped<IDalRepository<SoundLog>, MemoryDalRepository<SoundLog>>();
 
             services.AddControllersWithViews();
             services.AddMvc(options => options.EnableEndpointRouting = false);
@@ -92,7 +98,7 @@ namespace Sistem.WebUI
                     Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles")),
                 RequestPath = "/StaticFiles"
             });
-             */
+             **/
 
             app.UseAuthorization();
 

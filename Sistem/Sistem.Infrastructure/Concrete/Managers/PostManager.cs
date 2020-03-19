@@ -16,14 +16,5 @@ namespace Sistem.Infrastructure.Concrete.Managers
             _postDal = postDal;
         }
 
-        public int GetPostCountByYer(string yer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Post GetPostDetails(int id)
-        {
-            return _postDal.GetPostDetails(id);
-        }
     }
 }

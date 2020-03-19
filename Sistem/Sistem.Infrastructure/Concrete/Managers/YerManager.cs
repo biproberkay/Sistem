@@ -15,10 +15,5 @@ namespace Sistem.Infrastructure.Concrete.Managers
         {
             _yerDal = yerDal;
         }
-
-        public Yer GetYerDetails(int id)
-        {
-            return _yerDal.GetYerDetails(id);
-        }
     }
 }

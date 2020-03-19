@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sistem.Core.Abstract.ServiceInterfaces;
 
-namespace Sistem.WebUI.Controllers
+namespace Sistem.WebUI.Areas.Blog.Controllers
 {
+    [Area("Blog")]
     public class MediaLogController<T> : Controller 
         where T : class
     {
@@ -27,7 +28,8 @@ namespace Sistem.WebUI.Controllers
         // GET: MediaLog/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var t = _tService.GetById(id);
+            return View(t);
         }
 
         // GET: MediaLog/Create

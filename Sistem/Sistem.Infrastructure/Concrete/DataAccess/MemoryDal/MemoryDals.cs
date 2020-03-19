@@ -37,7 +37,13 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDal
             return TLogs;
         }
     }
-    public class PLogMemoryDal : MemoryDalRepository<PictureLog> { }
+    public class PLogMemoryDal : MemoryDalRepository<PictureLog> {/**
+        public override List<PictureLog> GetAll()
+        {
+            var plogs = mediaLogs;
+            return plogs;
+        }
+         **/}
     public class VLogMemoryDal : MemoryDalRepository<VideoLog> { }
     public class SLogMemoryDal : MemoryDalRepository<SoundLog> { }
 }

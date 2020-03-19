@@ -42,21 +42,6 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDal
             return base.GetAll();
         }
 
-        public int GetPostCountByYer(string yer)
-        {
-            var posts = _context.Posts.AsQueryable();
 
-            if (!string.IsNullOrEmpty(yer))
-            {
-                posts.Include(p=>p.Yer).Any(a => a.Yer.Title.ToLower() == yer.ToLower());
-            }
-
-            return posts.Count();
-        }
-
-        public Post GetPostDetails(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

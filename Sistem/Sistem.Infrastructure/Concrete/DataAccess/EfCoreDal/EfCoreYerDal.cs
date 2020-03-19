@@ -16,17 +16,6 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDal
             _context = context;
         }
 
-        public Yer GetYerDetails(int id)
-        {
-            var t = _context.Yers
-                            .Where(y => y.Id == id)
-                            .Include(y => y.Parent)
-                            .Include(y => y.Posts)
-                            .Include(y => y.YerChilds)
-                            .FirstOrDefault();
-            return t;
-        }
-
         public override List<Yer> GetAll()
         {
             var yerler = _context.Yers

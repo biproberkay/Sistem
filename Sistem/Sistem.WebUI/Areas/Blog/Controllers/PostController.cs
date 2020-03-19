@@ -36,7 +36,7 @@ namespace Sistem.WebUI.Areas.Blog.Controllers
 
         public ActionResult PostOku(int id)
         {
-            var post = _postService.GetPostDetails(id);
+            var post = _postService.GetById(id);
             var postModel = new PostVM()
             {
                 Post = post

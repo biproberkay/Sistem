@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Sistem.Core.Abstract.ServiceInterfaces;
 using Sistem.Core.Entities;
 
-namespace Sistem.WebUI.Controllers
+namespace Sistem.WebUI.Areas.Blog.Controllers
 {
     public class TLogController : MediaLogController<TextLog>
     {

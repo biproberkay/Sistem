@@ -9,21 +9,19 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.MemoryDal
     public class MemoryDalRepository<T> : IDalRepository<T> 
         where T :class, new()
     {
-        List<T> ts = new List<T>()
-        {
-            new T(){},
-            new T(){},
-            new T(){},
-        };
-
         public virtual List<T> GetAll()
         {
+            var ts = new List<T>();
+            ts.AddRange( new List<T>() { 
+                new T(), new T(), new T(), 
+            });
             return ts;
         }
 
         public virtual T GetById(int id)
         {
-            throw new NotImplementedException();
+            var t = new T();
+            return t;
         }
 
     }
