@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Sistem.Core.Abstract.ServiceInterfaces;
+using Sistem.Core.Entities;
 using Sistem.WebUI.Models;
 using System;
 using System.Collections.Generic;
@@ -15,13 +16,14 @@ namespace Sistem.WebUI.Areas.Blog.ViewComponents
         {
             _yerService = yerService;
         }
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(int yerId)
         {
-            return View(new YerListVM()
+            var model = new YerListVM()
             {
-                SelectedYer = RouteData.Values["yer"]?.ToString(),
+                SelectedYer = _yerService.GetById(yerId),
                 Yerler = _yerService.GetAll()
-            });
+            };
+            return View(model);
         }
         
 

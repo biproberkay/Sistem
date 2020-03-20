@@ -1,42 +1,46 @@
 ﻿@*@model ListVM*@
 @model List<Post>
+@*@model PostListModel*@
 @{
     ViewData["Title"] = "IndexPost";
     //Layout = "~/Areas/Blog/Views/Shared/_Layout.cshtml";
 }
 
 
-    <div id="postcard-list" class="row row-cols-1 row-cols-md-2">
-        @foreach (var item in Model)
-        {
-            <div id="postcard" class="col">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="~/images/6397117381_c7188ed316_b.jpg" class="card-img img-thumbnail h-100" alt="...~/images/6397117381_c7188ed316_b.jpg">
+<div id="postcard-list" class="row row-cols-1 row-cols-md-2">
+    @foreach (var item in Model)
+    {
+        <div id="postcard" class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="~/images/6397117381_c7188ed316_b.jpg" class="card-img img-thumbnail h-100" alt="...~/images/6397117381_c7188ed316_b.jpg">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Title</h5>
+                            <h6 class="card-subtitle">
+                                <span class="text-muted">
+                                    @item.DateCreated by&nbsp;
+                                    <a href="#">John Smith</a>
+                                </span>
+                            </h6>
+                            <p class="card-text">@item.Summary</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">@item.Title</h5>
-                                <h6 class="card-subtitle">
-                                    <span class="text-muted">
-                                        @item.DateCreated by&nbsp;
-                                        <a href="#">John Smith</a>
-                                    </span>
-                                </h6>
-                                <p class="card-text">@item.Summary</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                            <div class=" float-right">
-                                <a class="btn btn-warning btn-sm" role="button" href="blog-post.html">Read More</a>
-                                @Html.ActionLink("Makaleye Git!", "Details", "Post", new { id = item.Id }, new { @class = "btn btn-warning btn-sm", @role = "button" })
-                            </div>
+                        <div class=" float-right">
+                            <a class="btn btn-warning btn-sm" role="button" href="blog-post.html">Read More</a>
+                            @Html.ActionLink("Makaleye Git!", "Details", "Post", new { id = item.Id }, new { @class = "btn btn-warning btn-sm", @role = "button" })
                         </div>
                     </div>
                 </div>
             </div>
-        }
-    </div>
+        </div>
+    }
+</div>
+
+
+@*<div page-model="@Model.PagingInfo"></div>*@
 
 
 @*

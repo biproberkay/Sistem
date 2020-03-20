@@ -90,6 +90,13 @@ namespace Sistem.WebUI
                     name: "AreaRoute",
                     template: "{area:exists}/{controller}/{action}/{id?}/{title?}",
                     defaults: new { controller = "Home", action = "Index" });
+                /**
+                 */
+                routes.MapRoute(
+                  name: "posts",
+                  template: "posts/{yerId?}",
+                  defaults: new { area="Blog", controller ="Post", action ="IndexWithPagination" }
+                );
 
                 routes.MapRoute(
                     name: "defaut",

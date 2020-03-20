@@ -21,24 +21,33 @@ namespace Sistem.WebUI.Areas.Blog.Controllers
             _postService = postService;
         }
 
-        public ActionResult IndexWithPagination(string yer, int page = 1)
+        public ActionResult IndexWithPagination(int yerId, int page = 1)
         {
-            const int pageSize = 3;
-            var model = new PostListModel();
-            model.PagingInfo = new PagingInfo()
+            const int pageSize = 2;
+            var model = new PostListModel
             {
-                ItemsPerPage = pageSize,
-                CurrentPlace = yer,
-                CurrentPage = page,
-                TotalItems = _postService.GetAll().Count()
+                PagingInfo = new PagingInfo()
+                {
+                    ItemsPerPage = pageSize,
+                    CurrentYerId = yerId,
+                    CurrentPage = page,
+                    TotalItems = _postService.GetAll().Where(p=>p.YerId==yerId).Count()
+                },
+                Posts = _postService.GetAll().Where(p=>p.YerId == yerId)
+                    .Skip((page - 1) * pageSize).Take(pageSize).ToList()
             };
 
-            return View();
+            return View(model);
         }
 
         public override ActionResult Details(int id)
         {
-            return base.Details(id);
+            var post = _postService.GetById(id);
+            var postModel = new PostVM()
+            {
+                Post = post
+            };
+            return View(postModel);
         }
 
         public ActionResult PostOku(int id)
@@ -47,16 +56,6 @@ namespace Sistem.WebUI.Areas.Blog.Controllers
             var postModel = new PostVM()
             {
                 Post = post
-                /*
-                Body = post.Body,
-                Title = post.Title,
-                Summary = post.Summary,
-                DateCreated = post.DateCreated,
-                DateModified = post.DateModified,
-                Id = post.Id,
-                Yer = post.Yer,
-                YerId = post.YerId
-                */
             };
             return View(postModel);
         }

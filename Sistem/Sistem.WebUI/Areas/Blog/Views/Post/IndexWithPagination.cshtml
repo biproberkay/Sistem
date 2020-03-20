@@ -1,0 +1,14 @@
+﻿@model PostListModel
+@{
+    ViewData["Title"] = "Index-With-Pagination";
+}
+
+<div id="postcard-list" class="row row-cols-1 row-cols-md-2">
+    @foreach (var post in Model.Posts)
+    {
+        <partial name="_post" for="@post" />
+    }
+</div>
+
+
+<div page-model="@Model.PagingInfo"></div>

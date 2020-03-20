@@ -16,6 +16,31 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
             _context = context;
         }
 
+        public override List<Post> GetAll()
+        {
+            var postsWyer = _context.Posts
+                .Include(p => p.Yer)
+                    .ThenInclude(y=>y.Parent)
+                    //.ThenInclude(y=>y.YerChilds)
+                .ToList();
+
+            return base.GetAll();
+        }
+
+        public override Post GetById(int id)
+        {
+            var post = _context.Posts
+                            .Where(p => p.Id == id)
+                            .Include(y => y.Yer)
+                                .ThenInclude(y => y.Posts)
+                            .Include(y => y.Yer)
+                                .ThenInclude(y=>y.YerChilds)
+                            //.Include(y => y.Comments)
+                            //.Include(y => y.Ratings)
+                            //.Include(y => y.Tags)
+                            .FirstOrDefault();
+            return post;
+        }
         public Post GetPostDetails(int id)
         {
             var t = _context.Posts
@@ -31,16 +56,6 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
             return t;
         }
 
-        public override List<Post> GetAll()
-        {
-            var postsWyer = _context.Posts
-                .Include(p => p.Yer)
-                    .ThenInclude(y=>y.Parent)
-                    //.ThenInclude(y=>y.YerChilds)
-                .ToList();
-
-            return base.GetAll();
-        }
 
         public int GetPostCountByYer(string yer)
         {

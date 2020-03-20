@@ -11,7 +11,7 @@ namespace Sistem.WebUI.Areas.Blog.Models
         public int TotalItems { get; set; }
         public int ItemsPerPage { get; set; }
         public int CurrentPage { get; set; }
-        public string CurrentPlace { get; set; }
+        public int CurrentYerId { get; set; }
 
         public int TotalPages()
         {

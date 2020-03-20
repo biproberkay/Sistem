@@ -9,6 +9,6 @@ namespace Sistem.WebUI.Models
     public class YerListVM
     {
         public List<Yer> Yerler { get; set; }
-        public string SelectedYer { get; set; } 
+        public Yer SelectedYer { get; set; } 
     }
 }

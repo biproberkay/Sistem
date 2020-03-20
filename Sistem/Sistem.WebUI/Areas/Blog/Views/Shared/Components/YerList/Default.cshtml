@@ -1,20 +1,5 @@
 ﻿@model YerListVM
 
-@*  
-<div class="list-group">
-
-    @foreach (var item in Model.Yerler)
-    {
-        <a asp-controller="Shop"
-           asp-action="List"
-           asp-route-category="@item.Title.ToLower()"
-           class="list-group-item list-group-item-action @(Model.SelectedYer==item.Title.ToLower()?"active":"")">
-            @item.Title
-        </a>
-    }
-
-</div>
-@* *@
 <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0">
     <div class="container-fluid d-flex flex-column p-0 ">
         <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="~/">
@@ -50,11 +35,21 @@
                         </a>
                         <div class="bg-gradient-dark p-2 collapse" id="collapse-@item.Id" style="">
                             <p>Collapse content.</p>
+                            @** ------------------link kodu ----------------- **@
+                            <a asp-area="Blog"
+                               asp-controller="Post"
+                               asp-action="IndexWithPagination"
+                               asp-route-yerId="@item.Id"
+                               class="btn btn-info 
+                               @(Model.SelectedYer==item?"active":"")">
+                                @item.Title
+                            </a>
+                            @* -----------------link kodu sonu----------------------- *@
                             <ul class="nav navbar-nav text-light" id="accordionSidebar-2" style="width:inherit">
                                 @foreach (var iitem in item.YerChilds)
                                 {
                                     <li class="nav-item" role="presentation">
-                                    @* ------------------------------------------------------ *@
+                                        @* ------------------------------------------------------ *@
                                         <div>
                                             <a class="nav-link collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-@iitem.Id" href="#collapse-@iitem.Id" role="button">
                                                 <i class="fas fa-code"></i>

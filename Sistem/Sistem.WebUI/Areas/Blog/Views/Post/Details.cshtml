@@ -1,4 +1,5 @@
-﻿@model Sistem.Core.Entities.Post
+﻿@*@model Sistem.Core.Entities.Post*@
+@model PostVM
 @{
     ViewData["Title"] = "PostOku";
     Layout = "~/Areas/Blog/Views/Shared/_Layout.cshtml";
@@ -12,59 +13,71 @@
                         @*@Url.Content("/StaticFiles/main/assets/img/scenery/image3.jpg")*@
                     </div>
                     <div class="post-body">
-                        <h3>@Html.DisplayFor(model => model.Title)</h3>
+                        <h3>@Html.DisplayFor(model => model.Post.Title)</h3>
                         <div class="post-info">
                             <span>
                                 By Yazarın Adı
                                 @*<strong>@Html.DisplayFor(model => model.Yer.Title)</strong>*@
                             </span>
                             <span>
-                                <strong>@Model.DateCreated.ToString("f")</strong>
+                                <strong>@Model.Post.DateCreated.ToString("f")</strong>
                             </span>
                         </div>
                         <p>
-                            <strong>@Html.DisplayFor(model => model.Body)</strong>
+                            <strong>@Html.DisplayFor(model => model.Post.Body)</strong>
                         </p>
                         <dl class="row">
                             <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Title)
+                                @Html.DisplayNameFor(model => model.Post.Title)
                             </dt>
                             <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Title)
+                                @Html.DisplayFor(model => model.Post.Title)
                             </dd>
                             <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Summary)
+                                @Html.DisplayNameFor(model => model.Post.Summary)
                             </dt>
                             <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Summary)
+                                @Html.DisplayFor(model => model.Post.Summary)
                             </dd>
                             <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Body)
+                                @Html.DisplayNameFor(model => model.Post.Body)
                             </dt>
                             <dd class="col-sm-10 text-truncate">
-                                @Html.DisplayFor(model => model.Body)
+                                @Html.DisplayFor(model => model.Post.Body)
                             </dd>
                             <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.DateCreated)
+                                @Html.DisplayNameFor(model => model.Post.DateCreated)
                             </dt>
                             <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.DateCreated)
+                                @Html.DisplayFor(model => model.Post.DateCreated)
                             </dd>
                             <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.DateModified)
+                                @Html.DisplayNameFor(model => model.Post.DateModified)
                             </dt>
                             <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.DateModified)
+                                @Html.DisplayFor(model => model.Post.DateModified)
                             </dd>
                             <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Yer)
+                                @Html.DisplayNameFor(model => model.Post.Yer)
                             </dt>
                             <dd class="col-sm-10">
                             </dd>
                         </dl>
+                        <div class="alert-secondary">
+                            <h3>
+                                @Model.Post.Yer.Level-@Model.Post.YerId)@Model.Post.Yer.Title (@Model.Post.Yer.YerChilds.Count tane altyer)(@Model.Post.Yer.Posts.Count tane post var)
+                            </h3>
+                            @foreach (var item in Model.Post.Yer.YerChilds)
+                            {
+                                <div class="alert-info border-bottom-dark">
+                                    @item.Level-@item.Id @item.Title (@item.)
+                                </div>
+                            }
+
+                        </div>
 
                         <div>
-                            <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                            <a asp-action="Edit" asp-route-id="@Model.Post.Id">Edit</a> |
                             <a asp-action="Index">Back to List</a>
                         </div>
                     </div>

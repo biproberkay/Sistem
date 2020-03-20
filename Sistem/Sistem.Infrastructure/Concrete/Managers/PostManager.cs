@@ -16,6 +16,12 @@ namespace Sistem.Infrastructure.Concrete.Managers
             _postDal = postDal;
         }
 
+        public override Post GetById(int id)
+        {
+
+            return _postDal.GetById(id);
+        }
+
         public int GetPostCountByYer(string yer)
         {
             throw new NotImplementedException();
