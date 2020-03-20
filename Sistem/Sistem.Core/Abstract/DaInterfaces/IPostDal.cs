@@ -7,7 +7,5 @@ namespace Sistem.Core.Abstract.DaInterfaces
 {
     public interface IPostDal : IDaRepository<Post>
     {
-        public int GetPostCountByYer(string yer);
-        public Post GetPostDetails(int id);
     }
 }

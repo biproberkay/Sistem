@@ -18,18 +18,11 @@ namespace Sistem.Infrastructure.Concrete.Managers
 
         public override Post GetById(int id)
         {
-
             return _postDal.GetById(id);
         }
-
-        public int GetPostCountByYer(string yer)
+        public override List<Post> GetAll()
         {
-            throw new NotImplementedException();
-        }
-
-        public Post GetPostDetails(int id)
-        {
-            return _postDal.GetPostDetails(id);
+            return _postDal.GetAll();
         }
     }
 }

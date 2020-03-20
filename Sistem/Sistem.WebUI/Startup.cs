@@ -95,7 +95,7 @@ namespace Sistem.WebUI
                 routes.MapRoute(
                   name: "posts",
                   template: "posts/{yerId?}",
-                  defaults: new { area="Blog", controller ="Post", action ="IndexWithPagination" }
+                  defaults: new { area="Blog", controller ="Post", action ="IndexWP" }
                 );
 
                 routes.MapRoute(

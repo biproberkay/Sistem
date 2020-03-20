@@ -1,14 +1,12 @@
-﻿@model List<Sistem.Core.Entities.Yer>
+﻿@model YerListVM
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
-<h3 class="text-dark mb-4">Team</h3>
 <div class="card shadow">
 
     <div class="card-header py-3">
-        <p class="text-primary m-0 font-weight-bold">Place Info</p>
+        <p class="text-primary m-0 font-weight-bold">Sistem Haritası</p>
     </div>
 
     <div class="card-body">
@@ -55,31 +53,28 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach (var item in Model.Yerler)
+                        {
                         <tr>
                             <td>
-                                <img class="rounded-circle mr-2" width="30" height="30" src="/admin/assets/img/avatars/avatar1.jpeg">Airi Satou
+                                <img class="rounded-circle mr-2" width="30" height="30" src="~/admin/assets/img/avatars/321267.png">@item.Title
                             </td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>33</td>
-                            <td>2008/11/28</td>
-                            <td>$162,700</td>
+                            <td>@item.Id</td>
+                            <td>@item.Level</td>
+                            <td>@item.ParentId</td>
+                            @if (item.Parent != null)
+                            {
+                                <td>@item.Parent.Title</td>
+                            }
+                            else
+                            {
+                                <td>yoğ imiş</td>
+                            }
+                            <td>@item.Posts</td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", "Yer", new { Area = "Admin", id = item.Id }, new { @class = "btn btn-outline-primary fas fa-eye" })
+                            </td>
                         </tr>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    <img class="rounded-circle mr-2" width="30" height="30" src="~/admin/assets/img/avatars/321267.png">@item.Title
-                                </td>
-                                <td>@item.Id</td>
-                                <td>@item.Level</td>
-                                <td>@item.ParentId</td>
-                                <td>@item.Parent</td>
-                                <td>@item.Posts</td>
-                                <td>
-                                    @Html.ActionLink("Details", "Details","Yer", new { Area="Admin", id=item.Id }, new { @class="btn btn-outline-primary fas fa-eye"})
-                                </td>
-                            </tr>
                         }
                     </tbody>
                     <tfoot>

@@ -17,11 +17,11 @@ namespace Sistem.WebUI.Areas.Blog.Controllers
         private IServiceRepository<Post> _tService;
         public PostController(IServiceRepository<Post> tService, IPostService postService) : base(tService)
         {
-            _tService = tService;
             _postService = postService;
+            _tService = tService;
         }
 
-        public ActionResult IndexWithPagination(int yerId, int page = 1)
+        public ActionResult IndexWP(int yerId, int page = 1)
         {
             const int pageSize = 2;
             var model = new PostListModel
@@ -31,9 +31,9 @@ namespace Sistem.WebUI.Areas.Blog.Controllers
                     ItemsPerPage = pageSize,
                     CurrentYerId = yerId,
                     CurrentPage = page,
-                    TotalItems = _postService.GetAll().Where(p=>p.YerId==yerId).Count()
+                    TotalItems = _tService.GetAll().Where(p=>p.YerId==yerId).Count()
                 },
-                Posts = _postService.GetAll().Where(p=>p.YerId == yerId)
+                Posts = _tService.GetAll().Where(p=>p.YerId == yerId)
                     .Skip((page - 1) * pageSize).Take(pageSize).ToList()
             };
 
@@ -50,14 +50,5 @@ namespace Sistem.WebUI.Areas.Blog.Controllers
             return View(postModel);
         }
 
-        public ActionResult PostOku(int id)
-        {
-            var post = _postService.GetPostDetails(id);
-            var postModel = new PostVM()
-            {
-                Post = post
-            };
-            return View(postModel);
-        }
     }
 }

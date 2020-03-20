@@ -7,6 +7,5 @@ namespace Sistem.Core.Abstract.DaInterfaces
 {
     public interface IDaYer : IDaRepository<Yer>
     {
-        public Yer GetYerDetails(int id);
     }
 }
