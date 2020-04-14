@@ -42,5 +42,11 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
             return post;
         }
 
+        public override void Create(Post post)
+        {
+            post.Yer = _context.Yers.Find(post.YerId);
+            post.DateCreated = DateTime.Now;
+            base.Create(post);
+        }
     }
 }

@@ -24,5 +24,9 @@ namespace Sistem.Infrastructure.Concrete.Managers
         {
             return _postDal.GetAll();
         }
+        public override void Create(Post t)
+        {
+            _postDal.Create(t);
+        }
     }
 }

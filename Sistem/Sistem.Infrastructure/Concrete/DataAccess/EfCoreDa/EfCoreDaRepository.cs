@@ -16,6 +16,13 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
         {
             _context = context;
         }
+
+        public virtual void Create(T t)
+        {
+            _context.Set<T>().Add(t);
+            _context.SaveChanges();
+        }
+
         public virtual List<T> GetAll()
         {
             var ts = _context.Set<T>().ToList();

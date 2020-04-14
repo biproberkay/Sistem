@@ -30,7 +30,7 @@ namespace Sistem.WebUI.Controllers
         }
 
         // GET: Default/Create
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return View();
         }
@@ -38,7 +38,7 @@ namespace Sistem.WebUI.Controllers
         // POST: Default/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public virtual ActionResult Create(IFormCollection collection)
         {
             try
             {

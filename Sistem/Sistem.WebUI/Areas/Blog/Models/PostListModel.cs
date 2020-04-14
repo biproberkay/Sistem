@@ -21,6 +21,7 @@ namespace Sistem.WebUI.Areas.Blog.Models
     public class PostListModel
     {
         public PagingInfo PagingInfo { get; set; }
-        public List<Post> Posts { get; set; } 
+        public List<Post> Posts { get; set; }
+        public int YerId { get; set; }  
     }
 }

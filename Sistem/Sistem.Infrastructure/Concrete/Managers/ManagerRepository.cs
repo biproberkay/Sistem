@@ -14,6 +14,12 @@ namespace Sistem.Infrastructure.Concrete.Managers
         {
             _da = da;
         }
+
+        public virtual void Create(T t)
+        {
+            _da.Create(t);
+        }
+
         public virtual List<T> GetAll()
         {
             return _da.GetAll();

@@ -8,5 +8,6 @@ namespace Sistem.Core.Abstract.DaInterfaces
     {
         List<T> GetAll();
         T GetById(int id);
+        void Create(T t);
     }
 }

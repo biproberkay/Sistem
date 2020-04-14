@@ -9,22 +9,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="~/admin/assets/fonts/fontawesome-all.min.css">
     <style>
-        body{
-            color:unset
+        body {
+            color: unset
         }
+
         .bg-gradient-dark {
             background-color: #5a5c69;
             background-image: linear-gradient(281deg,#5a5c69 64%,#373840 87%);
             background-size: cover;
         }
-        .postcard-list{
 
-        }
-        .postcard{
-
+        .postcard-list {
         }
 
-
+        .postcard {
+        }
     </style>
 </head>
 <body id="page-top">
@@ -32,7 +31,7 @@
         @await Component.InvokeAsync("YerList")
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-                <nav id="navbar" class="bg-gradient-dark navbar navbar-dark navbar-expand shadow static-top topbar mb-3">
+                <nav id="navbar" class="bg-gradient-dark navbar navbar-dark navbar-expand shadow topbar">
                     <div class="container-fluid">
                         <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button">
                             <i class="fas fa-bars"></i>
@@ -150,7 +149,7 @@
                         </ul>
                     </div>
                 </nav>
-                <div class="container-fluid ">
+                <div class="container-fluid px-0">
                     @RenderBody()
                 </div>
             </div>

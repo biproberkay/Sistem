@@ -2,13 +2,21 @@
 @{
     ViewData["Title"] = "Index-With-Pagination";
 }
-
-<div id="postcard-list" class="row row-cols-1 row-cols-md-2">
+<div id="postcard-list" class="row row-cols-1 row-cols-md-2 p-3">
     @foreach (var post in Model.Posts)
     {
         <partial name="_post" for="@post" />
     }
 </div>
 
+<a asp-area="blog"
+   asp-controller="post"
+   asp-action="create"
+   asp-route-yerId="@Model.YerId" 
+   class="btn btn-primary btn-icon-split d-flex float-right" 
+   role="button" >    
+    <span class="text-white-50 icon"><i class="fas fa-flag"></i></span>
+    <span class="text-white text">Yeni Yayın Oluştur</span>
+</a>
 
-<div page-model="@Model.PagingInfo"></div>
+<div class="d-flex justify-content-center" page-model="@Model.PagingInfo"></div>
