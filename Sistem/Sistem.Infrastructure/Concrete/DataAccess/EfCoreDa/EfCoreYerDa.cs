@@ -16,7 +16,7 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
             _context = context;
         }
 
-        public Yer GetYerDetails(int id)
+        public override Yer GetById(int id)
         {
             var t = _context.Yers
                             .Where(y => y.Id == id)
@@ -26,5 +26,15 @@ namespace Sistem.Infrastructure.Concrete.DataAccess.EfCoreDa
                             .FirstOrDefault();
             return t;
         }
+
+        public override List<Yer> GetAll()
+        {
+            var yerler = _context.Yers
+                .Include(y=>y.Parent)
+                .Include(y => y.YerChilds).ToList();
+            //base.GetAll().include...
+            return yerler;
+        }
+
     }
 }

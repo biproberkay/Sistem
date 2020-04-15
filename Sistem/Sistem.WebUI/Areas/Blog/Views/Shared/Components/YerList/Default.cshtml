@@ -1,0 +1,98 @@
+﻿@model YerListVM
+
+<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0">
+    <div class="container-fluid d-flex flex-column p-0  sticky-top">
+        <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="~/">
+            <div class="sidebar-brand-icon rotate-n-15 ">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3"><span>Berkay</span></div>
+        </a>
+        <hr class="sidebar-divider my-0" />
+
+        <ul class="nav navbar-nav text-light " id="accordionSideBar" style="width:inherit">
+
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" href="/blog/post/index">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" href="profile.html">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            @foreach (var item in Model.Yerler.Where(y=>y.Level==1))
+            {
+                <li class="nav-item" role="presentation">
+                    @* ------------------------------------------------------------------------------------ *@
+                    <div class="">
+                        <a class="nav-link collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-@item.Id" href="#collapse-@item.Id" role="button">
+                            <i class="fas fa-code"></i>
+                            <span>@item.Title</span>
+                        </a>
+                        <div class="bg-gradient-dark p-2 collapse" id="collapse-@item.Id" style="">
+                            <p>Collapse content.</p>
+                            @** ------------------link kodu ----------------- **@
+                            <a asp-area="Blog"
+                               asp-controller="Post"
+                               asp-action="IndexWP"
+                               asp-route-yerId="@item.Id"
+                               class="btn btn-info 
+                               @(Model.SelectedYer==item?"active":"")">
+                                @item.Title
+                            </a>
+                            @* -----------------link kodu sonu----------------------- *@
+                            <ul class="nav navbar-nav text-light" id="accordionSidebar-2" style="width:inherit">
+                                @foreach (var iitem in item.YerChilds)
+                                {
+                                    <li class="nav-item" role="presentation">
+                                        @* ------------------------------------------------------ *@
+                                        <div>
+                                            <a class="nav-link collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-@iitem.Id" href="#collapse-@iitem.Id" role="button">
+                                                <i class="fas fa-code"></i>
+                                                <span>@iitem.Title</span>
+                                            </a>
+                                            <div class="bg-gradient-dark p-2 collapse" id="collapse-@iitem.Id" style="">
+                                                <p>Collapse content.</p>
+                                                <ul class="nav navbar-nav text-light " id="accordionSidebar-2" style="width:inherit">
+                                                    @foreach (var iiitem in iitem.YerChilds)
+                                                    {
+                                                        <li class="nav-item" role="presentation">
+                                                            @* ------------------------------------------------------ *@
+                                                            <div>
+                                                                <a class="nav-link bg-transparent collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-@iiitem.Id" href="#collapse-@iiitem.Id" role="button">
+                                                                    <i class="fas fa-code"></i>
+                                                                    <span>@iiitem.Title</span>
+                                                                </a>
+                                                                <div class="bg-gradient-dark p-2 collapse" id="collapse-@iiitem.Id" style="">
+                                                                    <p>Collapse content.</p>
+                                                                </div>
+                                                            </div>
+                                                            @* ------------------------------------------------------------ *@
+                                                        </li>
+
+                                                    }
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        @* ------------------------------------------------------------ *@
+                                    </li>
+
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    @* -------------------------------------------------------------------------------------------- *@
+                </li>
+
+            }
+        </ul>
+        <div class="text-center d-none d-md-inline">
+            <button class="btn rounded-circle border-0" id="sidebarToggle" type="button">
+            </button>
+        </div>
+    </div>
+</nav>

@@ -32,15 +32,18 @@ namespace Sistem.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<EfCoreSistemContext>();
-            services.AddScoped<IServiceRepository<Yer>, ManagerRepository<Yer>>();
-            services.AddScoped<IServiceYer, YerManager>();
+
             //services.AddScoped<IDaRepository<Yer>, MemoryYerDa>();
+            services.AddScoped<IServiceRepository<Yer>, ManagerRepository<Yer>>();
             services.AddScoped<IDaRepository<Yer>, EfCoreDaRepository<Yer>>();
+            services.AddScoped<IServiceYer, YerManager>();
             services.AddScoped<IDaYer, EfCoreYerDa>();
 
-            services.AddScoped<IServiceRepository<Post>, ManagerRepository<Post>>();
             //services.AddScoped<IDaRepository<Post>, MemoryPostDa>();
+            services.AddScoped<IServiceRepository<Post>, ManagerRepository<Post>>();
             services.AddScoped<IDaRepository<Post>, EfCoreDaRepository<Post>>();
+            services.AddScoped<IPostService, PostManager>();
+            services.AddScoped<IPostDal, EfCorePostDal>();
 
             services.AddControllersWithViews();
             services.AddMvc(options => options.EnableEndpointRouting = false);
@@ -60,12 +63,14 @@ namespace Sistem.WebUI
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
+            app.UseStaticFiles();
+            /** custom middleware için
             // Serve my app-specific default file, if present.
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
             options.DefaultFileNames.Add("/MyStaticFiles/main/index.html");
             app.UseDefaultFiles(options);
-            //app.UseStaticFiles();
             app.UseStaticFiles();//for wwwroot
             app.UseStaticFiles(new StaticFileOptions
             {
@@ -73,6 +78,7 @@ namespace Sistem.WebUI
                     Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles")),
                 RequestPath = "/StaticFiles"
             });
+             */
 
             app.UseAuthorization();
 
@@ -84,6 +90,13 @@ namespace Sistem.WebUI
                     name: "AreaRoute",
                     template: "{area:exists}/{controller}/{action}/{id?}/{title?}",
                     defaults: new { controller = "Home", action = "Index" });
+                /**
+                 */
+                routes.MapRoute(
+                  name: "posts",
+                  template: "posts/{yerId?}",
+                  defaults: new { area="Blog", controller ="Post", action ="IndexWP" }
+                );
 
                 routes.MapRoute(
                     name: "defaut",

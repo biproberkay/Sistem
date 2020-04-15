@@ -6,30 +6,26 @@ using Microsoft.AspNetCore.Mvc;
 using Sistem.Core.Abstract.ServiceInterfaces;
 using Sistem.Core.Entities;
 using Sistem.WebUI.Areas.Admin.Models;
+using Sistem.WebUI.Controllers;
+using Sistem.WebUI.Models;
 
 namespace Sistem.WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class YerController : Controller
+    public class YerController : DefaultController<Yer>
     {
-        private IServiceRepository<Yer> _yerService;
-
-        public YerController(IServiceRepository<Yer> yerService)
+        private IServiceYer _yerService;
+        public YerController(IServiceRepository<Yer> tService, IServiceYer yerService) : base(tService)
         {
             _yerService = yerService;
         }
-
-        public IActionResult Details(int? id)
+        public override ActionResult Index()
         {
-            Yer yer = _yerService.GetById((int)id);
-            var model = new YerViewModel()
+            var yerListModel = new YerListVM()
             {
-                Id = yer.Id,
-                Level = yer.Level,
-                Title = yer.Title,
-                ParentId = yer.ParentId
+                Yerler = _yerService.GetAll()
             };
-            return View(model);
+            return View(yerListModel);
         }
     }
 }

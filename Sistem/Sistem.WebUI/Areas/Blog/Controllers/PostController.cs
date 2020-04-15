@@ -5,7 +5,6 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Sistem.Core.Abstract.ServiceInterfaces;
 using Sistem.Core.Entities;
 using Sistem.WebUI.Areas.Blog.Models;
@@ -55,29 +54,51 @@ namespace Sistem.WebUI.Areas.Blog.Controllers
             };
             return View(postModel);
         }
+
         [HttpGet]
         public IActionResult Create(int yerId)
         {
-            ViewData["YerId"] = new SelectList(_serviceYer.GetAll(), "Id", "Title", yerId);
-            return View();
+            var model = new PostModel();
+            model.Yer = _serviceYer.GetById(yerId);
+            return View(model);
         }
-
-        // POST: Posts/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Default/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,Title,Summary,Body,DateCreated,DateModified,YerId")] Post post)
+        public override ActionResult Create(IFormCollection collection)
         {
-            if (ModelState.IsValid)
+            //if (!ModelState.IsValid) return View(viewModel);
+            //var model = Activator.CreateInstance(PostModel);
+            var model = new PostModel();
+            Type modelType = model.GetType();
+
+            foreach (PropertyInfo propertyInfo in modelType.GetProperties())
             {
-                //_context.Add(post);
-                _postService.Create(post);
-                //await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var mykey = propertyInfo.Name;
+                if (propertyInfo.CanRead && collection.Keys.Contains(mykey))
+                {
+                    try
+                    {
+                        var value = collection[mykey];
+                        propertyInfo.SetValue(model, value);
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                }
             }
-            ViewData["YerId"] = new SelectList(_serviceYer.GetAll(), "Id", "Title", post.YerId);
-            return View(post);
+            Post post = new Post()
+            {
+                Title = model.Title,
+                Summary = model.Summary,
+                Body = model.Body,
+                Yer = model.Yer
+
+            };
+            _postService.Create(post);
+            
+            return base.Create(collection);
         }
 
     }

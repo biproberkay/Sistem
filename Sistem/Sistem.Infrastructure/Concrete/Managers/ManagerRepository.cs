@@ -14,12 +14,18 @@ namespace Sistem.Infrastructure.Concrete.Managers
         {
             _da = da;
         }
-        public List<T> GetAll()
+
+        public virtual void Create(T t)
+        {
+            _da.Create(t);
+        }
+
+        public virtual List<T> GetAll()
         {
             return _da.GetAll();
         }
 
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
             return _da.GetById(id);
         }

@@ -11,15 +11,15 @@ namespace Sistem.Core.Entities
         public string Summary { get; set; }
         public string Body { get; set; }
         public DateTime DateCreated { get; set; }
-        public DateTime? DateModified { get; set; } 
+        public DateTime? DateModified { get; set; }
 
         //sonraki aşamada eklenecek özellikler
         /*
         public Int64? ArticleViewCount { get; set; }
-        
-        public Int64? ArticleViewCount { get; set; }
 
         public string ArticleStatus { get; set; }
+
+        public string ArticleRating { get; set; }
 
         public bool IsOpenForComment { get; set; }
 

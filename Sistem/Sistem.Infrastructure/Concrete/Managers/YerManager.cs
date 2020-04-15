@@ -16,9 +16,15 @@ namespace Sistem.Infrastructure.Concrete.Managers
             _yerDa = yerDa;
         }
 
-        public Yer GetYerDetails(int id)
+        public override Yer GetById(int id)
         {
-            return _yerDa.GetYerDetails(id);
+            return _yerDa.GetById(id);
         }
+
+        public override List<Yer> GetAll()
+        {
+            return _yerDa.GetAll();
+        }
+
     }
 }

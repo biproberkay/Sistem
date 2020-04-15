@@ -7,6 +7,5 @@ namespace Sistem.Core.Abstract.ServiceInterfaces
 {
     public interface IServiceYer : IServiceRepository<Yer>
     {
-        public Yer GetYerDetails(int id);
     }
 }

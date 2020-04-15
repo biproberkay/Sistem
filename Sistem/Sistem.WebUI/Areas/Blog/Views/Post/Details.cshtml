@@ -1,0 +1,74 @@
+﻿@*@model Sistem.Core.Entities.Post*@
+@model PostVM
+@{
+    ViewData["Title"] = "PostOku";
+    Layout = "~/Areas/Blog/Views/Shared/_Layout.cshtml";
+}
+    <div class="bg-gradient-dark">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 mx-auto" style="background-color: rgba(41, 48, 53, 0.73);">
+                        <div class="text-white px-3">
+                            <h1 class="display-1 py-5 font-weight-bold text-break">@Html.DisplayFor(model => model.Postt.Title)</h1>
+                            <h2 class="text-break">@Html.DisplayFor(model => model.Postt.Summary)</h2>
+                            <span class="meta bg-gradient-warning">Posted by <a href="#">User.FullName</a> on @Model.Postt.DateCreated.ToString("f")</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <article>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 mx-auto bg-white" style="font-size:large">
+                        @Html.Raw(Model.Postt.Body)
+                        <hr />
+                        @*@Model.Post.Body*@
+                        <hr />
+                        <div class="row">
+                            <div class="col d-flex justify-content-center align-items-center">
+                                <i class="fa fa-thumbs-up"></i>
+                            </div>
+                            <div class="col d-flex justify-content-center align-items-center">
+                                <i class="fa fa-thumbs-down"></i>
+                            </div>
+                            <div class="col d-flex flex-column justify-content-center align-items-center">
+                                <div><i class="fa fa-eye"></i><i class="fa fa-eye"></i></div><span class="badge badge-primary">42</span>
+                            </div>
+                            <div class="col d-flex justify-content-center align-items-center" style="color: #dc3545;">
+                                @for (int i = 0; i < 5 - Model.Postt.Yer.Level; i++)
+                                {
+                                    <i class="fa fa-star border rounded-circle border-danger shadow-lg p-1 m-1"></i>
+
+                                }
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </article>
+        <footer class="pt-0 text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 mx-auto px-0" >
+                        <div class="media d-sm-flex" style="background-color: rgba(41, 48, 53, 0.73);">
+                            <img class="rounded-circle mr-3" src="~/admin/assets/img/avatars/avatar1.jpeg" width="60" height="60" />
+                            <div class="media-body">
+                                <h5>Media Heading</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisl ac diam feugiat, non vestibulum libero posuere. Vivamus pharetra leo non nulla egestas, nec malesuada orci finibus. </p>
+                                <div class="media border rounded">
+                                    <div class="media-body text-right">
+                                        <h5>Media Heading</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisl ac diam feugiat, non vestibulum libero posuere. Vivamus pharetra leo non nulla egestas, nec malesuada orci finibus. </p>
+                                    </div><img class="rounded-circle ml-3" width="45" src="~/admin/assets/img/avatars/avatar2.jpeg" height="45" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+

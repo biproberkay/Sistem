@@ -1,34 +1,99 @@
-﻿@model YerListViewModel
+﻿@model YerListVM
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+<div class="card shadow">
 
-<h1>Index</h1>
-<h3>Bunlar Sistemdeki Yerler olacak. Aradığın içerikleri bu yerlere yerleştireceksin.</h3>
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">Sistem Haritası</p>
+    </div>
 
-<table style="width:100%">
-    <tr>
-        <th>Id</th>
-        <th>Level</th>
-        <th>Title</th>
-        <th>Parent</th>
-        <th></th>
-    </tr>
-    @foreach (var yer in Model.Yers)
-    {
-        <tr>
-            <td>@yer.Id</td>
-            <td>@yer.Level</td>
-            <td>@yer.Title</td>
-            <td>@yer.ParentId</td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { id = yer.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6 text-nowrap">
+                <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                    <label>
+                        Show&nbsp;
+                        <select class="form-control form-control-sm custom-select custom-select-sm">
+                            <option value="10" selected="">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">
+                                100
+                            </option>
+                        </select>&nbsp;
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-md-right dataTables_filter" id="dataTable_filter">
+                    <label>
+                        <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 align-self-center">
+                <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
+            </div>
 
-    }
-</table>
+            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Id</th>
+                            <th>Level</th>
+                            <th>ParentId</th>
+                            <th>Parent</th>
+                            <th>Posts</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Yerler)
+                        {
+                        <tr>
+                            <td>
+                                <img class="rounded-circle mr-2" width="30" height="30" src="~/admin/assets/img/avatars/321267.png">@item.Title
+                            </td>
+                            <td>@item.Id</td>
+                            <td>@item.Level</td>
+                            <td>@item.ParentId</td>
+                            @if (item.Parent != null)
+                            {
+                                <td>@item.Parent.Title</td>
+                            }
+                            else
+                            {
+                                <td>yoğ imiş</td>
+                            }
+                            <td>@item.Posts</td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", "Yer", new { Area = "Admin", id = item.Id }, new { @class = "btn btn-outline-primary fas fa-eye" })
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                    <tfoot>
 
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="col-md-6">
+                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
