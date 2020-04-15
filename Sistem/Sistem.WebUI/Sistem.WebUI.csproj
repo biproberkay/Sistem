@@ -1,592 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="MyStaticFiles\admin\404.html" />
-    <None Remove="MyStaticFiles\admin\assets\bootstrap\css\bootstrap.min.css" />
-    <None Remove="MyStaticFiles\admin\assets\bootstrap\js\bootstrap.min.js" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-brands-400.eot" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-brands-400.svg" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-brands-400.ttf" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-brands-400.woff" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-brands-400.woff2" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-regular-400.eot" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-regular-400.svg" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-regular-400.ttf" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-regular-400.woff" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-regular-400.woff2" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-solid-900.eot" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-solid-900.svg" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-solid-900.ttf" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-solid-900.woff" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fa-solid-900.woff2" />
-    <None Remove="MyStaticFiles\admin\assets\fonts\fontawesome-all.min.css" />
-    <None Remove="MyStaticFiles\admin\assets\img\avatars\avatar1.jpeg" />
-    <None Remove="MyStaticFiles\admin\assets\img\avatars\avatar2.jpeg" />
-    <None Remove="MyStaticFiles\admin\assets\img\avatars\avatar3.jpeg" />
-    <None Remove="MyStaticFiles\admin\assets\img\avatars\avatar4.jpeg" />
-    <None Remove="MyStaticFiles\admin\assets\img\avatars\avatar5.jpeg" />
-    <None Remove="MyStaticFiles\admin\assets\img\dogs\image1.jpeg" />
-    <None Remove="MyStaticFiles\admin\assets\img\dogs\image2.jpeg" />
-    <None Remove="MyStaticFiles\admin\assets\img\dogs\image3.jpeg" />
-    <None Remove="MyStaticFiles\admin\assets\img\Layer 0.jpg" />
-    <None Remove="MyStaticFiles\admin\assets\js\bs-init.js" />
-    <None Remove="MyStaticFiles\admin\assets\js\chart.min.js" />
-    <None Remove="MyStaticFiles\admin\assets\js\jquery.min.js" />
-    <None Remove="MyStaticFiles\admin\assets\js\theme.js" />
-    <None Remove="MyStaticFiles\admin\blank.html" />
-    <None Remove="MyStaticFiles\admin\forgot-password.html" />
-    <None Remove="MyStaticFiles\admin\index.html" />
-    <None Remove="MyStaticFiles\admin\login.html" />
-    <None Remove="MyStaticFiles\admin\profile.html" />
-    <None Remove="MyStaticFiles\admin\register.html" />
-    <None Remove="MyStaticFiles\admin\table.html" />
-    <None Remove="MyStaticFiles\main\about-us.html" />
-    <None Remove="MyStaticFiles\main\assets\bootstrap\css\bootstrap.min.css" />
-    <None Remove="MyStaticFiles\main\assets\bootstrap\js\bootstrap.min.js" />
-    <None Remove="MyStaticFiles\main\assets\css\sidebar.css" />
-    <None Remove="MyStaticFiles\main\assets\css\smoothproducts.css" />
-    <None Remove="MyStaticFiles\main\assets\fonts\Simple-Line-Icons.eot" />
-    <None Remove="MyStaticFiles\main\assets\fonts\simple-line-icons.min.css" />
-    <None Remove="MyStaticFiles\main\assets\fonts\Simple-Line-Icons.svg" />
-    <None Remove="MyStaticFiles\main\assets\fonts\Simple-Line-Icons.ttf" />
-    <None Remove="MyStaticFiles\main\assets\fonts\Simple-Line-Icons.woff" />
-    <None Remove="MyStaticFiles\main\assets\fonts\Simple-Line-Icons.woff2" />
-    <None Remove="MyStaticFiles\main\assets\img\avatars\avatar1.jpg" />
-    <None Remove="MyStaticFiles\main\assets\img\avatars\avatar2.jpg" />
-    <None Remove="MyStaticFiles\main\assets\img\avatars\avatar3.jpg" />
-    <None Remove="MyStaticFiles\main\assets\img\scenery\image1.jpg" />
-    <None Remove="MyStaticFiles\main\assets\img\scenery\image3.jpg" />
-    <None Remove="MyStaticFiles\main\assets\img\scenery\image4.jpg" />
-    <None Remove="MyStaticFiles\main\assets\img\scenery\image5.jpg" />
-    <None Remove="MyStaticFiles\main\assets\img\scenery\image6.jpg" />
-    <None Remove="MyStaticFiles\main\assets\img\star-empty.svg" />
-    <None Remove="MyStaticFiles\main\assets\img\star-half-empty.svg" />
-    <None Remove="MyStaticFiles\main\assets\img\star.svg" />
-    <None Remove="MyStaticFiles\main\assets\img\tech\image1.jpg" />
-    <None Remove="MyStaticFiles\main\assets\img\tech\image2.jpg" />
-    <None Remove="MyStaticFiles\main\assets\img\tech\image3.png" />
-    <None Remove="MyStaticFiles\main\assets\img\tech\image4.jpg" />
-    <None Remove="MyStaticFiles\main\assets\js\jquery.min.js" />
-    <None Remove="MyStaticFiles\main\assets\js\navbar.js" />
-    <None Remove="MyStaticFiles\main\assets\js\smoothproducts.min.js" />
-    <None Remove="MyStaticFiles\main\assets\js\theme.js" />
-    <None Remove="MyStaticFiles\main\blog-post-list.html" />
-    <None Remove="MyStaticFiles\main\blog-post.html" />
-    <None Remove="MyStaticFiles\main\catalog-page.html" />
-    <None Remove="MyStaticFiles\main\contact-us.html" />
-    <None Remove="MyStaticFiles\main\faq.html" />
-    <None Remove="MyStaticFiles\main\features.html" />
-    <None Remove="MyStaticFiles\main\gallery.html" />
-    <None Remove="MyStaticFiles\main\index.html" />
-    <None Remove="MyStaticFiles\main\login.html" />
-    <None Remove="MyStaticFiles\main\payment-page.html" />
-    <None Remove="MyStaticFiles\main\pricing.html" />
-    <None Remove="MyStaticFiles\main\product-page.html" />
-    <None Remove="MyStaticFiles\main\registration.html" />
-    <None Remove="MyStaticFiles\main\service-page.html" />
-    <None Remove="MyStaticFiles\main\shopping-cart.html" />
-    <None Remove="MyStaticFiles\main\slider.html" />
-    <None Remove="MyStaticFiles\main\testimonials.html" />
-    <None Remove="MyStaticFiles\me\assets\bootstrap\css\bootstrap.min.css" />
-    <None Remove="MyStaticFiles\me\assets\bootstrap\js\bootstrap.min.js" />
-    <None Remove="MyStaticFiles\me\assets\fonts\ionicons.eot" />
-    <None Remove="MyStaticFiles\me\assets\fonts\ionicons.min.css" />
-    <None Remove="MyStaticFiles\me\assets\fonts\ionicons.svg" />
-    <None Remove="MyStaticFiles\me\assets\fonts\ionicons.ttf" />
-    <None Remove="MyStaticFiles\me\assets\fonts\ionicons.woff" />
-    <None Remove="MyStaticFiles\me\assets\img\avatars\avatar.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\g-bipro.png" />
-    <None Remove="MyStaticFiles\me\assets\img\Layer 0.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\nature\image1.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\nature\image2.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\nature\image3.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\nature\image4.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\nature\image5.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\nature\image6.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\nature\image7.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\nature\image8.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\nature\image9.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\tech\image4.jpg" />
-    <None Remove="MyStaticFiles\me\assets\img\tech\image6.png" />
-    <None Remove="MyStaticFiles\me\assets\js\jquery.min.js" />
-    <None Remove="MyStaticFiles\me\assets\js\theme.js" />
-    <None Remove="MyStaticFiles\me\contact.html" />
-    <None Remove="MyStaticFiles\me\cv.html" />
-    <None Remove="MyStaticFiles\me\hire-me.html" />
-    <None Remove="MyStaticFiles\me\index.html" />
-    <None Remove="MyStaticFiles\me\project-page.html" />
-    <None Remove="MyStaticFiles\me\projects-no-images.html" />
+    <Compile Remove="Areas\Manager\**" />
+    <Compile Remove="Areas\Member\**" />
+    <Content Remove="Areas\Manager\**" />
+    <Content Remove="Areas\Member\**" />
+    <EmbeddedResource Remove="Areas\Manager\**" />
+    <EmbeddedResource Remove="Areas\Member\**" />
+    <None Remove="Areas\Manager\**" />
+    <None Remove="Areas\Member\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="MyStaticFiles\admin\404.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\bootstrap\css\bootstrap.min.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\bootstrap\js\bootstrap.min.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-brands-400.eot">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-brands-400.svg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-brands-400.ttf">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-brands-400.woff">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-brands-400.woff2">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-regular-400.eot">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-regular-400.svg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-regular-400.ttf">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-regular-400.woff">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-regular-400.woff2">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-solid-900.eot">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-solid-900.svg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-solid-900.ttf">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-solid-900.woff">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fa-solid-900.woff2">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\fonts\fontawesome-all.min.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\img\avatars\avatar1.jpeg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\img\avatars\avatar2.jpeg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\img\avatars\avatar3.jpeg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\img\avatars\avatar4.jpeg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\img\avatars\avatar5.jpeg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\img\dogs\image1.jpeg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\img\dogs\image2.jpeg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\img\dogs\image3.jpeg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\img\Layer 0.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\js\bs-init.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\js\chart.min.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\js\jquery.min.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\assets\js\theme.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\blank.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\forgot-password.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\index.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\login.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\profile.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\register.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\admin\table.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\about-us.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\bootstrap\css\bootstrap.min.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\bootstrap\js\bootstrap.min.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\css\sidebar.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\css\smoothproducts.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\fonts\Simple-Line-Icons.eot">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\fonts\simple-line-icons.min.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\fonts\Simple-Line-Icons.svg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\fonts\Simple-Line-Icons.ttf">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\fonts\Simple-Line-Icons.woff">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\fonts\Simple-Line-Icons.woff2">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\avatars\avatar1.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\avatars\avatar2.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\avatars\avatar3.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\scenery\image1.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\scenery\image3.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\scenery\image4.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\scenery\image5.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\scenery\image6.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\star-empty.svg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\star-half-empty.svg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\star.svg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\tech\image1.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\tech\image2.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\tech\image3.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\img\tech\image4.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\js\jquery.min.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\js\navbar.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\js\smoothproducts.min.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\assets\js\theme.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\blog-post-list.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\blog-post.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\catalog-page.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\contact-us.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\faq.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\features.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\gallery.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\index.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\login.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\payment-page.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\pricing.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\product-page.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\registration.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\service-page.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\shopping-cart.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\slider.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\main\testimonials.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\bootstrap\css\bootstrap.min.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\bootstrap\js\bootstrap.min.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\fonts\ionicons.eot">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\fonts\ionicons.min.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\fonts\ionicons.svg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\fonts\ionicons.ttf">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\fonts\ionicons.woff">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\avatars\avatar.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\g-bipro.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\Layer 0.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\nature\image1.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\nature\image2.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\nature\image3.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\nature\image4.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\nature\image5.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\nature\image6.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\nature\image7.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\nature\image8.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\nature\image9.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\tech\image4.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\img\tech\image6.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\js\jquery.min.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\assets\js\theme.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\contact.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\cv.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\hire-me.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\index.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\project-page.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="MyStaticFiles\me\projects-no-images.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -594,17 +25,158 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Guest\Data\" />
-    <Folder Include="Areas\Guest\Models\" />
-    <Folder Include="Areas\Manager\Data\" />
-    <Folder Include="Areas\Manager\Models\" />
-    <Folder Include="Areas\Member\Data\" />
+    <ProjectReference Include="..\Sistem.Core\Sistem.Core.csproj" />
+    <ProjectReference Include="..\Sistem.Infrastructure\Sistem.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sistem.Core\Sistem.Core.csproj" />
-    <ProjectReference Include="..\Sistem.Infrastructure\Sistem.Infrastructure.csproj" />
+    <Folder Include="Areas\Blog\Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Me\Controllers\" />
+    <Folder Include="Areas\Me\Data\" />
+    <Folder Include="Areas\Me\Models\" />
+    <Folder Include="Areas\Me\Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\admin\404.html" />
+    <None Include="wwwroot\admin\assets\bootstrap\css\bootstrap.min.css" />
+    <None Include="wwwroot\admin\assets\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\admin\assets\fonts\fa-brands-400.eot" />
+    <None Include="wwwroot\admin\assets\fonts\fa-brands-400.svg" />
+    <None Include="wwwroot\admin\assets\fonts\fa-brands-400.ttf" />
+    <None Include="wwwroot\admin\assets\fonts\fa-brands-400.woff" />
+    <None Include="wwwroot\admin\assets\fonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\admin\assets\fonts\fa-regular-400.eot" />
+    <None Include="wwwroot\admin\assets\fonts\fa-regular-400.svg" />
+    <None Include="wwwroot\admin\assets\fonts\fa-regular-400.ttf" />
+    <None Include="wwwroot\admin\assets\fonts\fa-regular-400.woff" />
+    <None Include="wwwroot\admin\assets\fonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\admin\assets\fonts\fa-solid-900.eot" />
+    <None Include="wwwroot\admin\assets\fonts\fa-solid-900.svg" />
+    <None Include="wwwroot\admin\assets\fonts\fa-solid-900.ttf" />
+    <None Include="wwwroot\admin\assets\fonts\fa-solid-900.woff" />
+    <None Include="wwwroot\admin\assets\fonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\admin\assets\fonts\fontawesome-all.min.css" />
+    <None Include="wwwroot\admin\assets\img\avatars\avatar1.jpeg" />
+    <None Include="wwwroot\admin\assets\img\avatars\avatar2.jpeg" />
+    <None Include="wwwroot\admin\assets\img\avatars\avatar3.jpeg" />
+    <None Include="wwwroot\admin\assets\img\avatars\avatar4.jpeg" />
+    <None Include="wwwroot\admin\assets\img\avatars\avatar5.jpeg" />
+    <None Include="wwwroot\admin\assets\img\dogs\image1.jpeg" />
+    <None Include="wwwroot\admin\assets\img\dogs\image2.jpeg" />
+    <None Include="wwwroot\admin\assets\img\dogs\image3.jpeg" />
+    <None Include="wwwroot\admin\assets\img\Layer 0.jpg" />
+    <None Include="wwwroot\admin\assets\js\bs-init.js" />
+    <None Include="wwwroot\admin\assets\js\chart.min.js" />
+    <None Include="wwwroot\admin\assets\js\jquery.min.js" />
+    <None Include="wwwroot\admin\assets\js\theme.js" />
+    <None Include="wwwroot\admin\blank.html" />
+    <None Include="wwwroot\admin\forgot-password.html" />
+    <None Include="wwwroot\admin\index.html" />
+    <None Include="wwwroot\admin\login.html" />
+    <None Include="wwwroot\admin\profile.html" />
+    <None Include="wwwroot\admin\register.html" />
+    <None Include="wwwroot\admin\table.html" />
+    <None Include="wwwroot\main\about-us.html" />
+    <None Include="wwwroot\main\assets\bootstrap\css\bootstrap.min.css" />
+    <None Include="wwwroot\main\assets\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\main\assets\css\sidebar.css" />
+    <None Include="wwwroot\main\assets\css\smoothproducts.css" />
+    <None Include="wwwroot\main\assets\fonts\Simple-Line-Icons.eot" />
+    <None Include="wwwroot\main\assets\fonts\simple-line-icons.min.css" />
+    <None Include="wwwroot\main\assets\fonts\Simple-Line-Icons.svg" />
+    <None Include="wwwroot\main\assets\fonts\Simple-Line-Icons.ttf" />
+    <None Include="wwwroot\main\assets\fonts\Simple-Line-Icons.woff" />
+    <None Include="wwwroot\main\assets\fonts\Simple-Line-Icons.woff2" />
+    <None Include="wwwroot\main\assets\img\avatars\avatar1.jpg" />
+    <None Include="wwwroot\main\assets\img\avatars\avatar2.jpg" />
+    <None Include="wwwroot\main\assets\img\avatars\avatar3.jpg" />
+    <None Include="wwwroot\main\assets\img\scenery\image1.jpg" />
+    <None Include="wwwroot\main\assets\img\scenery\image3.jpg" />
+    <None Include="wwwroot\main\assets\img\scenery\image4.jpg" />
+    <None Include="wwwroot\main\assets\img\scenery\image5.jpg" />
+    <None Include="wwwroot\main\assets\img\scenery\image6.jpg" />
+    <None Include="wwwroot\main\assets\img\star-empty.svg" />
+    <None Include="wwwroot\main\assets\img\star-half-empty.svg" />
+    <None Include="wwwroot\main\assets\img\star.svg" />
+    <None Include="wwwroot\main\assets\img\tech\image1.jpg" />
+    <None Include="wwwroot\main\assets\img\tech\image2.jpg" />
+    <None Include="wwwroot\main\assets\img\tech\image3.png" />
+    <None Include="wwwroot\main\assets\img\tech\image4.jpg" />
+    <None Include="wwwroot\main\assets\js\jquery.min.js" />
+    <None Include="wwwroot\js\navbar.js" />
+    <None Include="wwwroot\main\assets\js\smoothproducts.min.js" />
+    <None Include="wwwroot\main\assets\js\theme.js" />
+    <None Include="wwwroot\main\blog-post-list.html" />
+    <None Include="wwwroot\main\blog-post.html" />
+    <None Include="wwwroot\main\catalog-page.html" />
+    <None Include="wwwroot\main\contact-us.html" />
+    <None Include="wwwroot\main\faq.html" />
+    <None Include="wwwroot\main\features.html" />
+    <None Include="wwwroot\main\gallery.html" />
+    <None Include="wwwroot\main\index.html" />
+    <None Include="wwwroot\main\login.html" />
+    <None Include="wwwroot\main\payment-page.html" />
+    <None Include="wwwroot\main\pricing.html" />
+    <None Include="wwwroot\main\product-page.html" />
+    <None Include="wwwroot\main\registration.html" />
+    <None Include="wwwroot\main\service-page.html" />
+    <None Include="wwwroot\main\shopping-cart.html" />
+    <None Include="wwwroot\main\slider.html" />
+    <None Include="wwwroot\main\testimonials.html" />
+    <None Include="wwwroot\me\assets\bootstrap\css\bootstrap.min.css" />
+    <None Include="wwwroot\me\assets\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\me\assets\fonts\ionicons.eot" />
+    <None Include="wwwroot\me\assets\fonts\ionicons.min.css" />
+    <None Include="wwwroot\me\assets\fonts\ionicons.svg" />
+    <None Include="wwwroot\me\assets\fonts\ionicons.ttf" />
+    <None Include="wwwroot\me\assets\fonts\ionicons.woff" />
+    <None Include="wwwroot\me\assets\img\avatars\avatar.jpg" />
+    <None Include="wwwroot\me\assets\img\g-bipro.png" />
+    <None Include="wwwroot\me\assets\img\Layer 0.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image1.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image2.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image3.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image4.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image5.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image6.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image7.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image8.jpg" />
+    <None Include="wwwroot\me\assets\img\nature\image9.jpg" />
+    <None Include="wwwroot\me\assets\img\tech\image4.jpg" />
+    <None Include="wwwroot\me\assets\img\tech\image6.png" />
+    <None Include="wwwroot\me\assets\js\jquery.min.js" />
+    <None Include="wwwroot\me\assets\js\theme.js" />
+    <None Include="wwwroot\me\contact.html" />
+    <None Include="wwwroot\me\cv.html" />
+    <None Include="wwwroot\me\hire-me.html" />
+    <None Include="wwwroot\me\index.html" />
+    <None Include="wwwroot\me\project-page.html" />
+    <None Include="wwwroot\me\projects-no-images.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Blog\Views\Shared\Error.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Blog\Views\Shared\_Layout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Blog\Views\Shared\_ValidationScriptsPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Blog\Views\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Blog\Views\_ViewStart.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 

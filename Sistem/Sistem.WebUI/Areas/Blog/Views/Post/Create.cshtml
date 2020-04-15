@@ -1,0 +1,50 @@
+﻿@model Post
+@{
+    ViewData["Title"] = "View";
+}
+    <h3 class="text-center text-dark mb-1">Post-Create</h3>
+    <div class="row p-3">
+        <div class="col">
+            <form asp-action="create">
+                <div class="form-row">
+                    <div class="col-lg col-xl-4">
+                        <div class="form-group">
+                            <label asp-for="Title">Title</label>
+                            <input type="text" asp-for="Title" value="@Model.Title" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Summary">Description</label>
+                            <input asp-for="Summary" value="@Model.Summary" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Yer</span>
+                                </div>
+                                <input asp-for="Yer" placeholder="@Model.Yer.Title" type="text" value="@Model.Yer" class="form-control" />
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">Go!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group ">
+                            <label asp-for="Body">Body:</label>
+                            <textarea asp-for="Body" value="@Model.Body" class="form-control" rows="11" placeholder="Buraya yazını yaz"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Summary">Summary</label>
+                            <input asp-for="Summary" value="@Model.Summary" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary btn-block">Send Post</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
